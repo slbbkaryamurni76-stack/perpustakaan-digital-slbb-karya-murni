@@ -462,59 +462,59 @@
                         <span>2.</span>
                         <span>Kosakata Baru</span>
                     </span>
-                    <span class="text-slate-300">➜</span>
-                    <span id="step-pill-3" class="px-3.5 py-1.5 rounded-full bg-slate-100 text-slate-500 flex items-center gap-1.5">
-                        <span>3.</span>
-                        <span>Latihan Pertanyaan</span>
-                    </span>
-                </div>
-            </div>
-
-            <!-- TAHAP 1: BACA DONGENG -->
+            <!-- TAHAP 1: BACA DONGENG / TEKS BACAAN -->
             <div id="dongeng-step-1" class="space-y-5">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100 text-pink-800 text-xs font-bold">
-                    <span>🏰</span>
-                    <span>Dongeng Nusantara • <span id="df-level">Tingkat 2</span></span>
+                    <span id="df-category-icon">🏰</span>
+                    <span><span id="df-category-label">Dongeng Nusantara</span> • <span id="df-level">Tingkat 2</span></span>
                 </div>
                 <h3 id="df-title" class="font-display font-extrabold text-2xl sm:text-3xl text-brand-blue">
-                    Judul Dongeng
+                    Judul Bacaan
                 </h3>
 
-                <!-- Ilustrasi Dongeng -->
+                <!-- Ilustrasi Bacaan -->
                 <div class="w-full rounded-2xl bg-gradient-to-r from-sky-50 via-amber-50/70 to-pink-50 border border-sky-100 p-6 flex flex-col items-center justify-center text-center">
                     <div id="df-emoji" class="text-6xl sm:text-7xl mb-2">🏞️🐟</div>
-                    <p id="df-caption" class="text-xs sm:text-sm font-semibold text-slate-600">Ilustrasi Dongeng</p>
+                    <p id="df-caption" class="text-xs sm:text-sm font-semibold text-slate-600">Ilustrasi Bacaan</p>
                 </div>
 
-                <!-- Isi Dongeng -->
+                <!-- Keterangan Penanda Kata Penting -->
+                <div class="flex flex-wrap items-center gap-2 text-xs text-slate-600 bg-amber-50/70 border border-amber-200/70 rounded-xl px-4 py-2.5">
+                    <span class="font-bold text-amber-900">💡 Petunjuk:</span>
+                    <span>Kata dengan warna</span>
+                    <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">sorotan khusus</span>
+                    <span>adalah kosakata baru yang akan kita pelajari setelah membaca.</span>
+                </div>
+
+                <!-- Isi Cerita / Teks -->
                 <div id="df-story" class="text-slate-700 text-base sm:text-lg leading-loose space-y-4 font-medium bg-slate-50/70 rounded-2xl p-5 border border-slate-100">
                     <!-- Diisi oleh JS -->
                 </div>
 
-                <!-- Tombol Selesai Membaca Dongeng -->
+                <!-- Tombol Selesai Membaca -->
                 <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
                     <span class="text-xs sm:text-sm text-slate-500 font-medium">
                         Sudah selesai membaca? Ayo pelajari kata-kata baru!
                     </span>
-                    <button onclick="goToVocabStep()" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-brand-accent hover:bg-brand-blue text-white font-display font-extrabold text-sm sm:text-base shadow-md transition-all cursor-pointer flex items-center justify-center gap-2">
-                        <span>Selesai Membaca Dongeng</span>
+                    <button id="df-finish-read-btn" onclick="goToVocabStep()" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-brand-accent hover:bg-brand-blue text-white font-display font-extrabold text-sm sm:text-base shadow-md transition-all cursor-pointer flex items-center justify-center gap-2">
+                        <span>Selesai Membaca</span>
                         <span>➜</span>
                     </button>
                 </div>
             </div>
 
-            <!-- TAHAP 2: KOSAKATA BARU DARI DONGENG -->
+            <!-- TAHAP 2: KOSAKATA BARU -->
             <div id="dongeng-step-2" class="hidden space-y-5">
                 <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-200/80 text-amber-900 text-xs font-bold mb-2">
                         <span>💡</span>
-                        <span>Langkah 2 • Kosakata Baru dari Dongeng</span>
+                        <span>Langkah 2 • Kosakata Baru</span>
                     </div>
                     <h3 id="df-vocab-heading" class="font-display font-extrabold text-xl sm:text-2xl text-slate-800">
-                        Kosakata Baru dari Dongeng
+                        Kosakata Baru
                     </h3>
                     <p class="text-slate-600 text-sm sm:text-base mt-1">
-                        Bacalah arti kata dan contoh kalimatnya pelan-pelan agar kamu makin paham ceritanya.
+                        Bacalah arti kata dan contoh kalimatnya pelan-pelan agar kamu makin paham isinya.
                     </p>
                 </div>
 
@@ -526,29 +526,29 @@
                 <!-- Navigasi Tahap 2 -->
                 <div class="pt-3 flex flex-col sm:flex-row items-center justify-between gap-3">
                     <button onclick="goToStoryStep()" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm transition-colors cursor-pointer">
-                        ← Kembali Baca Dongeng
+                        ← Kembali Baca
                     </button>
                     <button onclick="goToQuizStep()" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-display font-extrabold text-sm sm:text-base shadow-md transition-all cursor-pointer flex items-center justify-center gap-2">
-                        <span>Lanjut Menjawab Pertanyaan</span>
+                        <span>Lanjut ke Kuis</span>
                         <span>➜</span>
                     </button>
                 </div>
             </div>
 
-            <!-- TAHAP 3: LATIHAN MENJAWAB PERTANYAAN -->
+            <!-- TAHAP 3: KUIS PEMAHAMAN BACAAN -->
             <div id="dongeng-step-3" class="hidden space-y-5">
                 <div class="bg-sky-50 border border-sky-200 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div>
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-200/80 text-brand-blue text-xs font-bold mb-1.5">
                             <span>✏️</span>
-                            <span>Langkah 3 • Latihan Menjawab Pertanyaan</span>
+                            <span>Langkah 3 • Kuis Pemahaman Bacaan</span>
                         </div>
                         <h3 class="font-display font-extrabold text-xl sm:text-2xl text-brand-blue">
-                            Ayo Jawab Pertanyaan Dongeng!
+                            Ayo Kerjakan Kuis Pemahaman Bacaan!
                         </h3>
                     </div>
                     <div id="quiz-progress-badge" class="px-3.5 py-1.5 rounded-xl bg-white border border-sky-200 text-brand-blue font-extrabold text-xs sm:text-sm self-start sm:self-center">
-                        Pertanyaan 1 dari 3
+                        Soal 1 dari 3
                     </div>
                 </div>
 
@@ -557,7 +557,7 @@
                     <!-- Diisi oleh JS -->
                 </div>
 
-                <!-- Wadah Hasil & Bintang Penghargaan di Akhir Sesi -->
+                <!-- Wadah Hasil & Bintang Penghargaan di Akhir Kuis -->
                 <div id="quiz-result-box" class="hidden bg-gradient-to-br from-amber-50 via-white to-sky-50 rounded-3xl border-2 border-amber-200 p-6 sm:p-8 text-center space-y-4">
                     <div id="result-stars" class="text-4xl sm:text-5xl tracking-wider">⭐⭐⭐</div>
                     <h4 id="result-title" class="font-display font-extrabold text-2xl sm:text-3xl text-brand-blue">
@@ -567,15 +567,15 @@
                         Kamu menjawab 3 dari 3 pertanyaan dengan benar.
                     </p>
                     <p id="result-encouragement" class="text-slate-600 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
-                        Kamu sudah membaca dongeng, belajar kosakata baru, dan menjawab pertanyaan dengan baik. Terus semangat membaca ya!
+                        Kamu sudah membaca, belajar kosakata baru, dan menyelesaikan kuis dengan baik. Terus semangat membaca ya!
                     </p>
 
                     <div class="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
                         <button onclick="restartQuiz()" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm sm:text-base transition-colors cursor-pointer">
-                            🔄 Ulangi Latihan
+                            🔄 Ulangi Kuis
                         </button>
                         <button onclick="chooseAnotherDongeng()" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-brand-accent hover:bg-brand-blue text-white font-bold text-sm sm:text-base transition-colors cursor-pointer">
-                            📚 Baca Dongeng Lain
+                            📚 Pilih Bacaan Lain
                         </button>
                     </div>
                 </div>
@@ -610,79 +610,403 @@
          JAVASCRIPT INTERAKTIF
     ====================================================================== -->
     <script>
-        // Data contoh buku untuk tiap kategori agar halaman hidup dan fungsional
+        // Koleksi bacaan lengkap untuk semua kategori (minimal 3 judul per kategori)
         const booksData = [
             {
                 id: 1,
                 category: 'dongeng',
                 categoryLabel: 'Dongeng Nusantara',
+                categoryIcon: '🏰',
+                finishLabel: 'Selesai Membaca Dongeng',
                 level: 'Tingkat 2',
-                title: 'Legenda Danau Toba',
-                emoji: '🏞️🐟',
-                caption: 'Pemandangan Danau Toba yang indah di Sumatera Utara',
-                summary: 'Kisah petani yang jujur, seekor ikan ajaib, dan asal mula indahnya Danau Toba.',
+                title: 'Timun Mas',
+                emoji: '🥒🏃‍♀️',
+                caption: 'Timun Mas berlari cerdik membawa bekal ajaib',
+                summary: 'Dongeng tentang keberanian dan kecerdikan Timun Mas menghadapi raksasa.',
                 paragraphs: [
-                    'Dahulu kala di Sumatera Utara, hiduplah seorang pemuda bernama Toba. Ia bekerja sebagai petani yang rajin dan baik hati.',
-                    'Suatu hari, Toba memancing di sungai dan mendapatkan seekor ikan mas yang sangat indah. Ternyata, ikan itu berubah menjadi seorang putri yang ramah.',
-                    'Mereka pun hidup bahagia dan dikaruniai seorang anak laki-laki bernama Samosir. Dari kisah inilah lahir legenda Danau Toba dan Pulau Samosir yang indah.'
+                    'Seorang janda tua bernama Mbok Sirni sangat ingin memiliki anak. Suatu hari, ia menanam biji mentimun ajaib dan menemukan bayi perempuan cantik yang diberi nama Timun Mas.',
+                    'Timun Mas tumbuh menjadi anak yang berani dan <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">cerdik</span>. Ketika raksasa datang menagih janji, Mbok Sirni memberi Timun Mas empat bungkusan ajaib berisi biji mentimun, jarum, garam, dan terasi.',
+                    'Berkat <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">keberanian</span> dan <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">ikhtiar</span> Timun Mas, raksasa berhasil dijebak dan Timun Mas pun selamat kembali ke pelukan ibunya.'
                 ],
                 vocab: [
                     {
-                        word: 'Legenda',
-                        icon: '📜',
-                        meaning: 'Cerita rakyat zaman dahulu tentang asal-usul suatu tempat.',
-                        example: 'Cerita asal mula Danau Toba termasuk legenda dari Sumatera Utara.'
+                        word: 'Cerdik',
+                        icon: '🧠',
+                        meaning: 'Cepat mengerti dan pandai mencari jalan keluar saat ada masalah.',
+                        example: 'Timun Mas bersikap cerdik saat menghadapi raksasa.'
                     },
                     {
-                        word: 'Dikaruniai',
-                        icon: '🎁',
-                        meaning: 'Diberi anugerah atau hadiah kebahagiaan.',
-                        example: 'Keluarga Toba dikaruniai seorang anak laki-laki bernama Samosir.'
+                        word: 'Keberanian',
+                        icon: '🛡️',
+                        meaning: 'Sikap tidak mudah takut ketika menghadapi tantangan atau bahaya.',
+                        example: 'Keberanian Timun Mas membantunya menyelamatkan diri.'
                     },
                     {
-                        word: 'Ramah',
-                        icon: '😊',
-                        meaning: 'Baik hati, suka tersenyum, dan mudah menyapa orang lain.',
-                        example: 'Putri ikan itu bersikap ramah kepada semua warga desa.'
+                        word: 'Ikhtiar',
+                        icon: '🌱',
+                        meaning: 'Usaha yang sungguh-sungguh untuk mencapai tujuan yang baik.',
+                        example: 'Mbok Sirni dan Timun Mas melakukan ikhtiar agar tetap selamat.'
                     }
                 ],
                 questions: [
                     {
-                        question: 'Di mana tempat tinggal pemuda bernama Toba dalam dongeng ini?',
+                        question: 'Dari mana asal bayi perempuan yang ditemukan Mbok Sirni?',
                         options: [
-                            { label: 'Di Sumatera Utara', icon: '🗺️' },
-                            { label: 'Di puncak gunung es', icon: '🏔️' },
-                            { label: 'Di dasar lautan dalam', icon: '🌊' }
+                            { label: 'Dari buah mentimun ajaib', icon: '🥒' },
+                            { label: 'Dari dalam gua batu', icon: '🪨' },
+                            { label: 'Dari atas pohon kelapa', icon: '🌴' }
                         ],
                         correctIndex: 0,
-                        explanation: 'Benar! Toba tinggal dan bekerja sebagai petani di Sumatera Utara.'
+                        explanation: 'Benar! Mbok Sirni menemukan bayi perempuan dari buah mentimun ajaib.'
                     },
                     {
-                        question: 'Hewan apa yang dipancing oleh Toba di sungai?',
+                        question: 'Apa saja bekal yang dibawa Timun Mas saat melarikan diri?',
                         options: [
-                            { label: 'Seekor burung elang', icon: '🦅' },
-                            { label: 'Seekor ikan mas yang indah', icon: '🐟' },
-                            { label: 'Seekor kelinci putih', icon: '🐇' }
+                            { label: 'Mainan boneka dan bola', icon: '🧸' },
+                            { label: 'Biji mentimun, jarum, garam, dan terasi', icon: '🎒' },
+                            { label: 'Sepeda dan payung lipat', icon: '🚲' }
                         ],
                         correctIndex: 1,
-                        explanation: 'Tepat sekali! Toba memancing seekor ikan mas yang sangat indah.'
+                        explanation: 'Tepat sekali! Timun Mas membawa biji mentimun, jarum, garam, dan terasi.'
                     },
                     {
-                        question: 'Apa arti kata "ramah" pada cerita tersebut?',
+                        question: 'Apa arti kata "cerdik" pada cerita Timun Mas?',
                         options: [
-                            { label: 'Suka marah-marah', icon: '😠' },
-                            { label: 'Selalu tidur sepanjang hari', icon: '😴' },
-                            { label: 'Baik hati dan suka menyapa', icon: '😊' }
+                            { label: 'Mudah menangis dan marah', icon: '😢' },
+                            { label: 'Pandai mencari jalan keluar', icon: '🧠' },
+                            { label: 'Selalu terlambat bangun pagi', icon: '⏰' }
                         ],
-                        correctIndex: 2,
-                        explanation: 'Bagus! Ramah artinya baik hati, suka tersenyum, dan mudah menyapa.'
+                        correctIndex: 1,
+                        explanation: 'Bagus! Cerdik artinya cepat mengerti dan pandai mencari jalan keluar.'
+                    },
+                    {
+                        question: 'Bagaimana akhir kisah Timun Mas dan Mbok Sirni?',
+                        options: [
+                            { label: 'Timun Mas selamat dan hidup bahagia bersama ibunya', icon: '🏡' },
+                            { label: 'Timun Mas tinggal di tengah hutan selamanya', icon: '🌲' },
+                            { label: 'Timun Mas lupa jalan pulang ke rumah', icon: '❓' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Hebat! Raksasa berhasil dijebak dan Timun Mas selamat bersama ibunya.'
                     }
                 ]
             },
             {
                 id: 2,
+                category: 'dongeng',
+                categoryLabel: 'Dongeng Nusantara',
+                categoryIcon: '🏰',
+                finishLabel: 'Selesai Membaca Dongeng',
+                level: 'Tingkat 2',
+                title: 'Malin Kundang',
+                emoji: '⛵🪨',
+                caption: 'Kapal layar besar berlayar menuju pelabuhan',
+                summary: 'Dongeng rakyat Sumatera Barat tentang pentingnya menghormati dan menyayangi orang tua.',
+                paragraphs: [
+                    'Malin Kundang tinggal bersama ibunya di tepi pantai. Setelah dewasa, ia merantau naik kapal dagang dan menjadi orang yang <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">berhasil</span>.',
+                    'Suatu hari, kapal megah Malin Kundang berlabuh di kampung halamannya. Ibunya datang dengan penuh <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">harapan</span> untuk memeluk anaknya.',
+                    'Sayangnya, Malin Kundang bersikap <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">angkuh</span> dan tidak mau mengakui ibunya. Cerita ini mengingatkan kita agar selalu berbakti kepada orang tua.'
+                ],
+                vocab: [
+                    {
+                        word: 'Berhasil',
+                        icon: '🏆',
+                        meaning: 'Tercapai maksud atau cita-cita setelah berusaha.',
+                        example: 'Malin Kundang berhasil menjadi pedagang kaya di rantau.'
+                    },
+                    {
+                        word: 'Harapan',
+                        icon: '🌟',
+                        meaning: 'Keinginan baik yang ditunggu-tunggu agar menjadi kenyataan.',
+                        example: 'Ibu menanti kepulangan anaknya dengan penuh harapan.'
+                    },
+                    {
+                        word: 'Angkuh',
+                        icon: '😤',
+                        meaning: 'Bersikap sombong dan menganggap diri sendiri lebih tinggi dari orang lain.',
+                        example: 'Sikap angkuh membuat seseorang dijauhi teman dan keluarga.'
+                    }
+                ],
+                questions: [
+                    {
+                        question: 'Di mana Malin Kundang dan ibunya tinggal pada awal cerita?',
+                        options: [
+                            { label: 'Di tepi pantai', icon: '🏖️' },
+                            { label: 'Di puncak gunung berapi', icon: '🌋' },
+                            { label: 'Di dalam hutan lebat', icon: '🌳' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Benar! Malin Kundang dan ibunya tinggal di tepi pantai.'
+                    },
+                    {
+                        question: 'Apa arti kata "angkuh" pada bacaan tersebut?',
+                        options: [
+                            { label: 'Suka menolong sesama', icon: '🤝' },
+                            { label: 'Bersikap sombong dan tinggi hati', icon: '😤' },
+                            { label: 'Rajin belajar setiap hari', icon: '📘' }
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Tepat sekali! Angkuh artinya sombong atau tinggi hati.'
+                    },
+                    {
+                        question: 'Pesan baik apa yang bisa kita ambil dari dongeng Malin Kundang?',
+                        options: [
+                            { label: 'Selalu menghormati dan menyayangi orang tua', icon: '❤️' },
+                            { label: 'Melupakan keluarga saat sudah sukses', icon: '🚫' },
+                            { label: 'Tidak mau mendengarkan nasihat', icon: '🙈' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Bagus! Kita harus selalu menghormati dan menyayangi orang tua.'
+                    }
+                ]
+            },
+            {
+                id: 3,
+                category: 'dongeng',
+                categoryLabel: 'Dongeng Nusantara',
+                categoryIcon: '🏰',
+                finishLabel: 'Selesai Membaca Dongeng',
+                level: 'Tingkat 1',
+                title: 'Kancil dan Buaya',
+                emoji: '🦌🐊',
+                caption: 'Kancil menyeberangi sungai dengan akal yang pintar',
+                summary: 'Dongeng singkat tentang Kancil yang menggunakan akal pintar untuk menyeberangi sungai.',
+                paragraphs: [
+                    'Kancil ingin memakan buah rambutan segar di seberang sungai, tetapi airnya dalam dan ada banyak buaya.',
+                    'Kancil memiliki <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">akal</span> yang pintar. Ia meminta para buaya berbaris rapi dari tepi ke tepi agar bisa dihitung jumlahnya.',
+                    'Para buaya menuruti perintah Kancil. Kancil pun melompat dari satu punggung ke punggung lain hingga tiba di seberang dengan <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">selamat</span>.'
+                ],
+                vocab: [
+                    {
+                        word: 'Akal',
+                        icon: '💡',
+                        meaning: 'Pikiran sehat atau cara berpikir untuk memecahkan masalah.',
+                        example: 'Kancil memakai akal yang pintar untuk menyeberangi sungai.'
+                    },
+                    {
+                        word: 'Selamat',
+                        icon: '✅',
+                        meaning: 'Terhindar dari bahaya atau tidak mengalami celaka.',
+                        example: 'Kancil sampai di seberang sungai dengan selamat.'
+                    }
+                ],
+                questions: [
+                    {
+                        question: 'Buah apa yang ingin dimakan oleh Kancil?',
+                        options: [
+                            { label: 'Buah rambutan segar', icon: '🍒' },
+                            { label: 'Buah semangka besar', icon: '🍉' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Benar! Kancil ingin memakan buah rambutan segar di seberang sungai.'
+                    },
+                    {
+                        question: 'Bagaimana cara Kancil melewati sungai yang penuh buaya?',
+                        options: [
+                            { label: 'Meminta buaya berbaris lalu melompati punggungnya', icon: '🐊' },
+                            { label: 'Terbang menggunakan sayap burung', icon: '🕊️' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Tepat sekali! Kancil meminta buaya berbaris dan melompati punggungnya.'
+                    },
+                    {
+                        question: 'Apa arti kata "selamat" pada cerita tersebut?',
+                        options: [
+                            { label: 'Terhindar dari bahaya', icon: '✅' },
+                            { label: 'Tersesat di jalan', icon: '🧭' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Hebat! Selamat artinya terhindar dari bahaya.'
+                    }
+                ]
+            },
+            {
+                id: 4,
+                category: 'teks_bacaan',
+                categoryLabel: 'Teks Bacaan',
+                categoryIcon: '📘',
+                finishLabel: 'Selesai Membaca Teks',
+                level: 'Tingkat 2',
+                title: 'Mengenal Rambu Lalu Lintas',
+                emoji: '🚦🛑',
+                caption: 'Rambu lalu lintas membantu pejalan kaki dan pengendara aman',
+                summary: 'Teks pengetahuan tentang arti warna lampu lalu lintas dan rambu penyeberangan.',
+                paragraphs: [
+                    'Rambu lalu lintas dipasang di jalan raya agar semua pengguna jalan tetap <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">tertib</span> dan aman.',
+                    'Pada lampu lalu lintas, warna merah berarti berhenti, warna kuning berarti bersiap atau berhati-hati, dan warna hijau berarti boleh jalan.',
+                    'Pejalan kaki sebaiknya menyeberang di <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">zebra cross</span> sambil menengok ke kiri dan ke kanan.'
+                ],
+                vocab: [
+                    {
+                        word: 'Tertib',
+                        icon: '📏',
+                        meaning: 'Rapi, teratur, dan mematuhi aturan yang berlaku.',
+                        example: 'Pengendara berhenti dengan tertib saat lampu merah menyala.'
+                    },
+                    {
+                        word: 'Zebra Cross',
+                        icon: '🚶',
+                        meaning: 'Garis-garis putih di jalan sebagai tempat aman untuk menyeberang.',
+                        example: 'Kita menyeberang jalan melalui zebra cross.'
+                    }
+                ],
+                questions: [
+                    {
+                        question: 'Apa arti warna merah pada lampu lalu lintas?',
+                        options: [
+                            { label: 'Berhenti', icon: '🛑' },
+                            { label: 'Berlari kencang', icon: '🏃' },
+                            { label: 'Membunyikan klakson terus-menerus', icon: '📢' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Benar! Lampu merah berarti berhenti.'
+                    },
+                    {
+                        question: 'Di mana tempat aman bagi pejalan kaki untuk menyeberang jalan?',
+                        options: [
+                            { label: 'Di zebra cross', icon: '🚶' },
+                            { label: 'Di tengah tikungan gelap', icon: '↪️' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Tepat sekali! Pejalan kaki menyeberang di zebra cross.'
+                    },
+                    {
+                        question: 'Apa arti kata "tertib" pada teks bacaan ini?',
+                        options: [
+                            { label: 'Teratur dan mematuhi aturan', icon: '📏' },
+                            { label: 'Saling mendahului tanpa aturan', icon: '⚡' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Bagus! Tertib artinya rapi, teratur, dan mematuhi aturan.'
+                    }
+                ]
+            },
+            {
+                id: 5,
+                category: 'teks_bacaan',
+                categoryLabel: 'Teks Bacaan',
+                categoryIcon: '📘',
+                finishLabel: 'Selesai Membaca Teks',
+                level: 'Tingkat 1',
+                title: 'Menjaga Kebersihan Diri',
+                emoji: '🧼🪥',
+                caption: 'Mencuci tangan dan menyikat gigi menjaga tubuh tetap sehat',
+                summary: 'Bacaan sederhana tentang kebiasaan sehat mencuci tangan, mandi, dan menyikat gigi.',
+                paragraphs: [
+                    'Menjaga kebersihan diri sangat penting agar <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">kuman</span> tidak mudah masuk ke dalam tubuh kita.',
+                    'Kita perlu mencuci tangan pakai sabun sebelum makan dan setelah bermain, serta menyikat gigi pagi dan malam.',
+                    'Mandi dua kali sehari membuat badan terasa <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">segar</span> dan terhindar dari penyakit.'
+                ],
+                vocab: [
+                    {
+                        word: 'Kuman',
+                        icon: '🦠',
+                        meaning: 'Makhluk sangat kecil yang tidak terlihat mata dan bisa menyebabkan sakit.',
+                        example: 'Mencuci tangan dengan sabun dapat menghilangkan kuman.'
+                    },
+                    {
+                        word: 'Segar',
+                        icon: '💧',
+                        meaning: 'Terasa nyaman, bersih, dan bersemangat kembali.',
+                        example: 'Tubuh terasa segar setelah mandi air bersih.'
+                    }
+                ],
+                questions: [
+                    {
+                        question: 'Kapan kita perlu mencuci tangan memakai sabun?',
+                        options: [
+                            { label: 'Sebelum makan dan setelah bermain', icon: '🧼' },
+                            { label: 'Saat sedang tidur nyenyak', icon: '😴' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Benar! Cuci tangan pakai sabun sebelum makan dan setelah bermain.'
+                    },
+                    {
+                        question: 'Berapa kali sebaiknya kita mandi dalam sehari?',
+                        options: [
+                            { label: 'Dua kali sehari', icon: '🚿' },
+                            { label: 'Sekali dalam sebulan', icon: '📅' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Tepat sekali! Mandi dua kali sehari membuat tubuh bersih dan segar.'
+                    },
+                    {
+                        question: 'Apa arti kata "kuman" pada teks tersebut?',
+                        options: [
+                            { label: 'Makhluk sangat kecil yang bisa memicu sakit', icon: '🦠' },
+                            { label: 'Makanan manis untuk sarapan', icon: '🧁' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Hebat! Kuman adalah makhluk sangat kecil yang bisa menyebabkan sakit.'
+                    }
+                ]
+            },
+            {
+                id: 6,
+                category: 'teks_bacaan',
+                categoryLabel: 'Teks Bacaan',
+                categoryIcon: '📘',
+                finishLabel: 'Selesai Membaca Teks',
+                level: 'Tingkat 3',
+                title: 'Hewan di Sekitar Kita',
+                emoji: '🐈🐦',
+                caption: 'Kucing, burung, dan kupu-kupu hidup di sekitar lingkungan kita',
+                summary: 'Teks pengetahuan tentang jenis hewan peliharaan dan hewan liar di sekitar rumah.',
+                paragraphs: [
+                    'Di sekitar rumah dan sekolah, kita sering melihat berbagai hewan seperti kucing, ayam, burung, dan kupu-kupu.',
+                    'Kucing dan ayam termasuk hewan yang sering <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">dipelihara</span> manusia dengan memberi makan dan tempat tinggal yang layak.',
+                    'Kita harus bersikap <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">penyayang</span> kepada hewan dan tidak menyakiti mereka.'
+                ],
+                vocab: [
+                    {
+                        word: 'Dipelihara',
+                        icon: '🐾',
+                        meaning: 'Dirawat, diberi makan, dan dijaga dengan baik oleh manusia.',
+                        example: 'Kucing peliharaan diberi makan setiap hari.'
+                    },
+                    {
+                        word: 'Penyayang',
+                        icon: '💛',
+                        meaning: 'Memiliki rasa sayang dan peduli kepada makhluk hidup lain.',
+                        example: 'Anak yang penyayang tidak akan menyakiti hewan.'
+                    }
+                ],
+                questions: [
+                    {
+                        question: 'Hewan apa saja yang sering dipelihara di sekitar rumah?',
+                        options: [
+                            { label: 'Kucing dan ayam', icon: '🐈' },
+                            { label: 'Paus biru dan hiu', icon: '🐋' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Benar! Kucing dan ayam adalah contoh hewan yang sering dipelihara.'
+                    },
+                    {
+                        question: 'Bagaimana sikap yang baik terhadap hewan di sekitar kita?',
+                        options: [
+                            { label: 'Bersikap penyayang dan tidak menyakitinya', icon: '💛' },
+                            { label: 'Melemparinya dengan batu', icon: '🪨' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Tepat sekali! Kita harus bersikap penyayang dan merawat hewan dengan baik.'
+                    },
+                    {
+                        question: 'Apa arti kata "dipelihara" pada bacaan ini?',
+                        options: [
+                            { label: 'Dirawat dan diberi makan dengan baik', icon: '🐾' },
+                            { label: 'Dibiarkan kelaparan', icon: '🥣' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Bagus! Dipelihara berarti dirawat, diberi makan, dan dijaga dengan baik.'
+                    }
+                ]
+            },
+            {
+                id: 7,
                 category: 'cerita_anak',
                 categoryLabel: 'Cerita Anak',
+                categoryIcon: '👦',
+                finishLabel: 'Selesai Membaca Cerita',
                 level: 'Tingkat 1',
                 title: 'Rani Gemar Menanam Bunga',
                 emoji: '🌻👧',
@@ -690,8 +1014,8 @@
                 summary: 'Cerita tentang Rani yang merawat taman sekolah bersama teman-temannya.',
                 paragraphs: [
                     'Setiap pagi sebelum masuk kelas, Rani menyiram tanaman bunga di halaman sekolah.',
-                    'Rani menggunakan gembor kecil berisi air bersih. Teman-temannya, Budi dan Sari, ikut membantu mencabut rumput liar.',
-                    'Beberapa minggu kemudian, bunga matahari mekar berwarna kuning cerah. Halaman sekolah menjadi sangat asri dan indah.'
+                    'Rani menggunakan <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">gembor</span> kecil berisi air bersih. Teman-temannya, Budi dan Sari, ikut membantu mencabut rumput liar.',
+                    'Beberapa minggu kemudian, bunga matahari mekar berwarna kuning cerah. Halaman sekolah menjadi sangat <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">asri</span> dan indah.'
                 ],
                 vocab: [
                     {
@@ -725,62 +1049,144 @@
                         ],
                         correctIndex: 1,
                         explanation: 'Hebat! Bunga matahari mekar berwarna kuning cerah.'
+                    },
+                    {
+                        question: 'Apa arti kata "asri" pada cerita Rani?',
+                        options: [
+                            { label: 'Indah dan sejuk dipandang mata', icon: '🌿' },
+                            { label: 'Kering dan berdebu', icon: '🏜️' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Bagus! Asri artinya indah, sejuk, dan nyaman dilihat.'
                     }
                 ]
             },
             {
-                id: 3,
-                category: 'teks_bacaan',
-                categoryLabel: 'Teks Bacaan',
-                level: 'Tingkat 3',
-                title: 'Mengenal Alat Transportasi Ramah Lingkungan',
-                emoji: '🚲🌱',
-                caption: 'Bersepeda menyehatkan tubuh dan menjaga udara tetap bersih',
-                summary: 'Bacaan pengetahuan sederhana tentang manfaat bersepeda dan berjalan kaki.',
+                id: 8,
+                category: 'cerita_anak',
+                categoryLabel: 'Cerita Anak',
+                categoryIcon: '👦',
+                finishLabel: 'Selesai Membaca Cerita',
+                level: 'Tingkat 2',
+                title: 'Berbagi Bekal di Kelas',
+                emoji: '🍱😊',
+                caption: 'Dika berbagi kue pisang dengan teman sebangkunya',
+                summary: 'Cerita persahabatan tentang saling berbagi dan peduli saat jam istirahat.',
                 paragraphs: [
-                    'Sepeda adalah salah satu alat transportasi yang ramah lingkungan karena tidak mengeluarkan asap.',
-                    'Dengan bersepeda ke tempat yang dekat, udara di sekitar kita tetap bersih dan sehat untuk dihirup.',
-                    'Selain menjaga lingkungan, mengayuh sepeda juga membuat otot kaki menjadi kuat dan tubuh tetap bugar.'
+                    'Saat jam istirahat, Dika membuka kotak bekal yang disiapkan ibunya. Di dalamnya ada nasi goreng dan kue pisang.',
+                    'Dika melihat temannya lupa membawa bekal. Dengan <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">senang hati</span>, Dika membagi kue pisangnya.',
+                    'Mereka makan bersama dengan <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">rukun</span> dan persahabatan mereka semakin erat.'
                 ],
                 vocab: [
                     {
-                        word: 'Transportasi',
-                        icon: '🚲',
-                        meaning: 'Alat atau kendaraan untuk berpindah dari satu tempat ke tempat lain.',
-                        example: 'Sepeda adalah alat transportasi yang tidak berpolusi.'
+                        word: 'Senang Hati',
+                        icon: '😊',
+                        meaning: 'Merasa gembira dan ikhlas melakukan sesuatu.',
+                        example: 'Dika berbagi makanan dengan senang hati.'
                     },
                     {
-                        word: 'Bugar',
-                        icon: '💪',
-                        meaning: 'Sehat dan segar seluruh tubuh.',
-                        example: 'Tubuh terasa bugar setelah berolahraga pagi.'
+                        word: 'Rukun',
+                        icon: '🤝',
+                        meaning: 'Hidup damai, saling menyayangi, dan tidak bertengkar.',
+                        example: 'Siswa kelas bermain dengan rukun saat istirahat.'
                     }
                 ],
                 questions: [
                     {
-                        question: 'Mengapa sepeda disebut alat transportasi ramah lingkungan?',
+                        question: 'Apa yang dilakukan Dika saat melihat temannya tidak membawa bekal?',
                         options: [
-                            { label: 'Karena tidak mengeluarkan asap', icon: '🍃' },
-                            { label: 'Karena suaranya sangat keras', icon: '📢' }
+                            { label: 'Membagi kue pisangnya dengan senang hati', icon: '🍌' },
+                            { label: 'Menyembunyikan kotak bekalnya', icon: '🙈' }
                         ],
                         correctIndex: 0,
-                        explanation: 'Benar! Sepeda tidak mengeluarkan asap sehingga udara tetap bersih.'
+                        explanation: 'Benar! Dika membagi kue pisangnya dengan senang hati.'
                     },
                     {
-                        question: 'Apa manfaat mengayuh sepeda bagi tubuh kita?',
+                        question: 'Apa arti kata "rukun" pada cerita ini?',
                         options: [
-                            { label: 'Membuat otot kaki kuat dan tubuh bugar', icon: '💪' },
-                            { label: 'Membuat badan cepat lelah dan sakit', icon: '🤒' }
+                            { label: 'Damai dan saling menyayangi', icon: '🤝' },
+                            { label: 'Suka mengejek teman', icon: '😒' }
                         ],
                         correctIndex: 0,
-                        explanation: 'Tepat! Mengayuh sepeda membuat otot kaki kuat dan tubuh bugar.'
+                        explanation: 'Tepat sekali! Rukun artinya hidup damai dan saling menyayangi.'
+                    },
+                    {
+                        question: 'Kapan peristiwa dalam cerita ini terjadi?',
+                        options: [
+                            { label: 'Saat jam istirahat di sekolah', icon: '🔔' },
+                            { label: 'Saat liburan sekolah', icon: '🏖️' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Hebat! Cerita ini terjadi saat jam istirahat di sekolah.'
                     }
                 ]
             },
             {
-                id: 4,
+                id: 9,
+                category: 'cerita_anak',
+                categoryLabel: 'Cerita Anak',
+                categoryIcon: '👦',
+                finishLabel: 'Selesai Membaca Cerita',
+                level: 'Tingkat 2',
+                title: 'Merapikan Buku Sebelum Tidur',
+                emoji: '📚🌙',
+                caption: 'Buku diletakkan rapi di rak sebelum tidur malam',
+                summary: 'Kebiasaan baik merapikan perlengkapan sekolah agar besok pagi siap belajar.',
+                paragraphs: [
+                    'Malam hari tiba dan lampu kamar mulai dinyalakan. Sebelum tidur, Tono selalu merapikan buku dan pensil warna ke dalam tas.',
+                    'Buku cerita yang sudah dibaca diletakkan kembali ke rak dengan <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">rapi</span>.',
+                    'Berkat kebiasaan <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">disiplin</span> ini, Tono tidak pernah terburu-buru di pagi hari.'
+                ],
+                vocab: [
+                    {
+                        word: 'Rapi',
+                        icon: '📐',
+                        meaning: 'Tertata dengan baik dan teratur pada tempatnya.',
+                        example: 'Rak buku Tono terlihat rapi setiap hari.'
+                    },
+                    {
+                        word: 'Disiplin',
+                        icon: '⏰',
+                        meaning: 'Taat pada aturan dan waktu secara teratur.',
+                        example: 'Disiplin merapikan barang membuat belajar lebih nyaman.'
+                    }
+                ],
+                questions: [
+                    {
+                        question: 'Apa yang dilakukan Tono sebelum tidur malam?',
+                        options: [
+                            { label: 'Merapikan buku, pensil warna, dan rak buku', icon: '📚' },
+                            { label: 'Meninggalkan buku berserakan di lantai', icon: '🌪️' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Benar! Tono merapikan buku dan perlengkapan belajarnya sebelum tidur.'
+                    },
+                    {
+                        question: 'Apa manfaat sikap disiplin bagi Tono?',
+                        options: [
+                            { label: 'Tidak terburu-buru saat pagi hari', icon: '🌅' },
+                            { label: 'Kehilangan buku tulisnya', icon: '🔍' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Tepat sekali! Tono tidak terburu-buru di pagi hari.'
+                    },
+                    {
+                        question: 'Apa arti kata "disiplin" pada cerita tersebut?',
+                        options: [
+                            { label: 'Taat pada aturan dan waktu secara teratur', icon: '⏰' },
+                            { label: 'Malas mengerjakan tugas', icon: '🛋️' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Hebat! Disiplin artinya taat pada aturan dan waktu secara teratur.'
+                    }
+                ]
+            },
+            {
+                id: 10,
                 category: 'cerita_bergambar',
                 categoryLabel: 'Cerita Bergambar',
+                categoryIcon: '🖼️',
+                finishLabel: 'Selesai Membaca Cerita',
                 level: 'Tingkat 1',
                 title: 'Petualangan Kancil & Kura-Kura',
                 emoji: '🦌🐢',
@@ -788,8 +1194,8 @@
                 summary: 'Cerita bergambar tentang pentingnya saling tolong-menolong antar sahabat.',
                 paragraphs: [
                     'Di sebuah hutan yang hijau, Kancil dan Kura-kura ingin memetik buah jambu di seberang sungai.',
-                    'Air sungai mengalir cukup deras. Kura-kura pandai berenang, sedangkan Kancil pandai melompat dan memetik buah.',
-                    'Mereka pun bekerja sama. Kura-kura membantu Kancil menyeberang, lalu Kancil memetikkan buah jambu yang manis untuk dimakan bersama.'
+                    'Air sungai mengalir cukup <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">deras</span>. Kura-kura pandai berenang, sedangkan Kancil pandai melompat dan memetik buah.',
+                    'Mereka pun <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">bekerja sama</span>. Kura-kura membantu Kancil menyeberang, lalu Kancil memetikkan buah jambu yang manis untuk dimakan bersama.'
                 ],
                 vocab: [
                     {
@@ -823,79 +1229,141 @@
                         ],
                         correctIndex: 0,
                         explanation: 'Bagus! Mereka bekerja sama dengan saling membantu.'
+                    },
+                    {
+                        question: 'Apa arti kata "deras" pada cerita bergambar ini?',
+                        options: [
+                            { label: 'Aliran air yang cepat dan kuat', icon: '🌊' },
+                            { label: 'Air yang diam tidak mengalir', icon: '⏸️' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Hebat! Deras berarti mengalir sangat cepat dan kuat.'
                     }
                 ]
             },
             {
-                id: 5,
-                category: 'dongeng',
-                categoryLabel: 'Dongeng Nusantara',
-                level: 'Tingkat 2',
-                title: 'Asal Mula Telaga Warna',
-                emoji: '🌈💧',
-                caption: 'Air telaga berkilau indah dengan warna pelangi',
-                summary: 'Dongeng Nusantara tentang kebaikan hati, rasa syukur, dan telaga yang berkilau indah.',
+                id: 11,
+                category: 'cerita_bergambar',
+                categoryLabel: 'Cerita Bergambar',
+                categoryIcon: '🖼️',
+                finishLabel: 'Selesai Membaca Cerita',
+                level: 'Tingkat 1',
+                title: 'Pelangi Setelah Hujan',
+                emoji: '🌧️🌈',
+                caption: 'Pelangi indah muncul di langit setelah hujan reda',
+                summary: 'Cerita bergambar tentang suasana langit cerah penuh warna setelah hujan turun.',
                 paragraphs: [
-                    'Di sebuah kerajaan yang damai, tinggal seorang raja dan ratu yang sangat menyayangi rakyatnya.',
-                    'Suatu hari, penduduk desa mengadakan pesta syukur atas panen yang melimpah. Semua warga saling berbagi makanan dengan gembira.',
-                    'Tiba-tiba, muncul mata air jernih yang memancarkan warna-warni indah seperti pelangi. Warga menamainya Telaga Warna sebagai tanda rasa syukur.'
+                    'Awan gelap menutupi langit dan hujan rintik turun membasahi tanah.',
+                    'Setelah hujan <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">reda</span>, sinar matahari bersinar terang kembali.',
+                    'Di langit muncul <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">pelangi</span> beraneka warna yang membuat anak-anak tersenyum gembira.'
                 ],
                 vocab: [
                     {
-                        word: 'Melimpah',
-                        icon: '🌾',
-                        meaning: 'Banyak sekali dan mencukupi untuk semua orang.',
-                        example: 'Hasil panen padi tahun ini sangat melimpah.'
+                        word: 'Reda',
+                        icon: '🌤️',
+                        meaning: 'Berhenti atau berkurang hingga menjadi tenang.',
+                        example: 'Hujan mulai reda dan langit tampak cerah.'
                     },
                     {
-                        word: 'Bersyukur',
-                        icon: '🙏',
-                        meaning: 'Merasa senang dan berterima kasih atas kebaikan yang diterima.',
-                        example: 'Warga bersyukur karena panen berjalan lancar.'
-                    },
-                    {
-                        word: 'Berkilau',
-                        icon: '✨',
-                        meaning: 'Bercahaya terang dan indah saat terkena sinar.',
-                        example: 'Air telaga berkilau indah di bawah cahaya matahari.'
+                        word: 'Pelangi',
+                        icon: '🌈',
+                        meaning: 'Lengkungan warna-warni indah di langit setelah hujan.',
+                        example: 'Pelangi tampak indah melengkung di langit sore.'
                     }
                 ],
                 questions: [
                     {
-                        question: 'Mengapa penduduk desa mengadakan pesta dalam dongeng ini?',
+                        question: 'Kapan pelangi muncul dalam cerita bergambar ini?',
                         options: [
-                            { label: 'Sebagai rasa syukur atas panen yang melimpah', icon: '🌾' },
-                            { label: 'Karena hujan tidak pernah turun', icon: '☀️' },
-                            { label: 'Karena kehilangan semua hewan ternak', icon: '🐄' }
+                            { label: 'Setelah hujan reda dan matahari bersinar', icon: '🌈' },
+                            { label: 'Saat malam hari tanpa bulan', icon: '🌑' }
                         ],
                         correctIndex: 0,
-                        explanation: 'Benar! Warga mengadakan pesta sebagai rasa syukur atas panen yang melimpah.'
+                        explanation: 'Benar! Pelangi muncul setelah hujan reda dan matahari bersinar.'
                     },
                     {
-                        question: 'Seperti apa tampilan air di Telaga Warna?',
+                        question: 'Apa arti kata "reda" pada cerita ini?',
                         options: [
-                            { label: 'Keruh dan berpasir', icon: '🟤' },
-                            { label: 'Berkilau dengan warna-warni indah', icon: '🌈' },
-                            { label: 'Membeku menjadi es', icon: '🧊' }
+                            { label: 'Berhenti atau berkurang', icon: '🌤️' },
+                            { label: 'Semakin deras dan kencang', icon: '⛈️' }
                         ],
-                        correctIndex: 1,
-                        explanation: 'Tepat sekali! Air telaga berkilau dengan warna-warni indah.'
+                        correctIndex: 0,
+                        explanation: 'Tepat sekali! Reda artinya berhenti atau berkurang.'
                     },
                     {
-                        question: 'Apa arti kata "melimpah" pada cerita tersebut?',
+                        question: 'Bagaimana perasaan anak-anak saat melihat pelangi?',
                         options: [
-                            { label: 'Habis tidak tersisa', icon: '🫙' },
-                            { label: 'Sangat sedikit sekali', icon: '🤏' },
-                            { label: 'Banyak sekali dan mencukupi', icon: '🧺' }
+                            { label: 'Tersenyum gembira', icon: '😄' },
+                            { label: 'Merasa takut bersembunyi', icon: '😨' }
                         ],
-                        correctIndex: 2,
-                        explanation: 'Hebat! Melimpah artinya banyak sekali dan mencukupi untuk semua.'
+                        correctIndex: 0,
+                        explanation: 'Hebat! Anak-anak tersenyum gembira melihat pelangi.'
+                    }
+                ]
+            },
+            {
+                id: 12,
+                category: 'cerita_bergambar',
+                categoryLabel: 'Cerita Bergambar',
+                categoryIcon: '🖼️',
+                finishLabel: 'Selesai Membaca Cerita',
+                level: 'Tingkat 2',
+                title: 'Semut dan Kepompong',
+                emoji: '🐜🦋',
+                caption: 'Kepompong berubah menjadi kupu-kupu yang indah',
+                summary: 'Cerita bergambar tentang kesabaran menunggu perubahan hingga menjadi kupu-kupu.',
+                paragraphs: [
+                    'Seekor semut melihat kepompong yang diam menggantung di ranting pohon.',
+                    'Semut belajar <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">sabar</span> menunggu hingga waktunya tiba.',
+                    'Akhirnya, kepompong terbuka dan muncul kupu-kupu bersayap <span class="px-2 py-0.5 rounded-md bg-amber-100 text-brand-blue font-extrabold border-b-2 border-amber-400">cantik</span> yang terbang riang.'
+                ],
+                vocab: [
+                    {
+                        word: 'Sabar',
+                        icon: '⏳',
+                        meaning: 'Tenang, tidak tergesa-gesa, dan tahan menunggu proses.',
+                        example: 'Kita perlu bersabar menunggu tanaman tumbuh besar.'
+                    },
+                    {
+                        word: 'Cantik',
+                        icon: '🦋',
+                        meaning: 'Elok, indah, dan menarik dilihat.',
+                        example: 'Sayap kupu-kupu itu terlihat sangat cantik.'
+                    }
+                ],
+                questions: [
+                    {
+                        question: 'Kepompong berubah menjadi hewan apa pada akhir cerita?',
+                        options: [
+                            { label: 'Kupu-kupu bersayap cantik', icon: '🦋' },
+                            { label: 'Ikan mas di kolam', icon: '🐟' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Benar! Kepompong berubah menjadi kupu-kupu yang cantik.'
+                    },
+                    {
+                        question: 'Sikap baik apa yang ditunjukkan pada cerita ini?',
+                        options: [
+                            { label: 'Sabar menunggu proses perubahan', icon: '⏳' },
+                            { label: 'Merusak ranting pohon', icon: '🪵' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Tepat sekali! Sabar menunggu proses hingga waktunya tiba.'
+                    },
+                    {
+                        question: 'Apa arti kata "cantik" pada bacaan ini?',
+                        options: [
+                            { label: 'Elok dan indah dilihat', icon: '✨' },
+                            { label: 'Kotor dan berbau', icon: '🗑️' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Hebat! Cantik artinya elok, indah, dan menarik dilihat.'
                     }
                 ]
             }
         ];
 
-        // State alur dongeng aktif
+        // State alur bacaan aktif (Dongeng, Teks Bacaan, Cerita Anak, Cerita Bergambar)
         let currentDongeng = null;
         let currentQuestionIndex = 0;
         let correctAnswersCount = 0;
@@ -994,27 +1462,22 @@
             document.getElementById('reader-caption').textContent = book.caption;
 
             document.getElementById('reader-content').innerHTML = book.paragraphs
-                .map(p => `<p>${p}</p>`)
-                .join('');
-
-            document.getElementById('reader-vocab').innerHTML = book.vocab
-                .map(v => `
-                    <div class="bg-white rounded-xl p-3 border border-amber-200/80">
-                        <span class="block font-extrabold text-brand-blue text-sm">${v.icon || '📌'} ${v.word}</span>
-                        <span class="block text-slate-600 text-xs mt-0.5 leading-relaxed">${v.meaning}</span>
-                    </div>
-                `).join('');
-
-            document.getElementById('reader-modal').classList.remove('hidden');
+        // Membuka bacaan dengan alur 3 langkah (Baca -> Kosakata Baru -> Kuis Pemahaman Bacaan)
+        function openReader(bookId) {
+            const book = booksData.find(b => b.id === bookId);
+            if (!book) return;
+            openDongengFlow(book);
         }
 
-        // Memulai alur belajar dongeng dari Tahap 1
+        // Memulai alur belajar 3 langkah dari Tahap 1
         function openDongengFlow(book) {
             currentDongeng = book;
             currentQuestionIndex = 0;
             correctAnswersCount = 0;
             answeredCurrentQuestion = false;
 
+            document.getElementById('df-category-icon').textContent = book.categoryIcon || '📖';
+            document.getElementById('df-category-label').textContent = book.categoryLabel;
             document.getElementById('df-level').textContent = book.level;
             document.getElementById('df-title').textContent = book.title;
             document.getElementById('df-emoji').textContent = book.emoji;
@@ -1022,6 +1485,11 @@
             document.getElementById('df-story').innerHTML = book.paragraphs
                 .map(p => `<p>${p}</p>`)
                 .join('');
+
+            const finishBtn = document.getElementById('df-finish-read-btn');
+            if (finishBtn) {
+                finishBtn.innerHTML = `<span>${book.finishLabel || 'Selesai Membaca'}</span><span>➜</span>`;
+            }
 
             renderDongengVocabCards(book);
             goToStoryStep();
@@ -1086,7 +1554,7 @@
             `).join('');
         }
 
-        // Tahap 3: Masuk ke Latihan Menjawab Pertanyaan
+        // Tahap 3: Masuk ke Kuis Pemahaman Bacaan
         function goToQuizStep() {
             updateStepIndicator(3);
             document.getElementById('dongeng-step-1').classList.add('hidden');
@@ -1100,7 +1568,7 @@
             renderCurrentQuestion();
         }
 
-        // Merender soal pilihan ganda bergambar/berikon yang sedang aktif
+        // Merender soal kuis pilihan ganda berikon yang sedang aktif
         function renderCurrentQuestion() {
             if (!currentDongeng || !currentDongeng.questions || currentDongeng.questions.length === 0) return;
 
@@ -1108,7 +1576,7 @@
             const total = currentDongeng.questions.length;
             const q = currentDongeng.questions[currentQuestionIndex];
 
-            document.getElementById('quiz-progress-badge').textContent = `Pertanyaan ${currentQuestionIndex + 1} dari ${total}`;
+            document.getElementById('quiz-progress-badge').textContent = `Soal ${currentQuestionIndex + 1} dari ${total}`;
 
             const box = document.getElementById('quiz-question-box');
             box.innerHTML = `
@@ -1133,13 +1601,13 @@
                     `).join('')}
                 </div>
 
-                <!-- Umpan balik langsung (benar/salah dengan penjelasan singkat) -->
+                <!-- Umpan balik langsung (benar/coba lagi dengan penjelasan singkat) -->
                 <div id="quiz-feedback" class="hidden rounded-2xl p-4 border text-sm sm:text-base leading-relaxed"></div>
 
                 <!-- Tombol Lanjut ke Soal Berikutnya / Lihat Hasil -->
                 <div id="quiz-next-wrap" class="hidden pt-1 flex justify-end">
                     <button onclick="handleNextQuestion()" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-brand-accent hover:bg-brand-blue text-white font-bold text-sm sm:text-base transition-colors cursor-pointer">
-                        ${currentQuestionIndex + 1 < total ? 'Pertanyaan Berikutnya ➜' : 'Lihat Hasil & Bintang ⭐'}
+                        ${currentQuestionIndex + 1 < total ? 'Soal Berikutnya ➜' : 'Lihat Hasil & Bintang ⭐'}
                     </button>
                 </div>
             `;
@@ -1189,7 +1657,7 @@
                 feedbackEl.innerHTML = `
                     <div class="font-display font-extrabold flex items-center gap-2 mb-1">
                         <span>💛</span>
-                        <span>Belum tepat, ayo kita pahami bersama!</span>
+                        <span>Coba lagi ya, ayo kita pahami bersama!</span>
                     </div>
                     <p class="font-medium">${q.explanation}</p>
                 `;
@@ -1209,7 +1677,7 @@
             }
         }
 
-        // Menampilkan skor & bintang penghargaan di akhir sesi latihan
+        // Menampilkan skor & bintang penghargaan di akhir kuis
         function showQuizResult() {
             document.getElementById('quiz-question-box').classList.add('hidden');
             document.getElementById('quiz-footer-nav').classList.add('hidden');
@@ -1219,16 +1687,16 @@
 
             let stars = '⭐';
             let title = 'Usaha Yang Bagus!';
-            let message = 'Kamu sudah mencoba menjawab semua pertanyaan. Ayo coba lagi untuk mengumpulkan lebih banyak bintang!';
+            let message = 'Kamu sudah mencoba menjawab semua soal kuis. Ayo coba lagi untuk mengumpulkan lebih banyak bintang!';
 
             if (ratio === 1) {
                 stars = '⭐⭐⭐';
                 title = 'Luar Biasa! Semua Jawaban Benar!';
-                message = 'Kamu hebat sekali! Kamu membaca cerita dengan teliti dan memahami kosakata baru dengan baik.';
+                message = 'Kamu hebat sekali! Kamu membaca dengan teliti dan memahami kosakata baru dengan baik.';
             } else if (ratio >= 0.5) {
                 stars = '⭐⭐';
-                title = 'Hebat! Kamu Sudah Paham Ceritanya!';
-                message = 'Kerja bagus! Kamu berhasil menjawab sebagian besar pertanyaan dengan tepat.';
+                title = 'Hebat! Kamu Sudah Paham Isinya!';
+                message = 'Kerja bagus! Kamu berhasil menjawab sebagian besar soal kuis dengan tepat.';
             }
 
             document.getElementById('result-stars').textContent = stars;
@@ -1239,7 +1707,7 @@
             document.getElementById('quiz-result-box').classList.remove('hidden');
         }
 
-        // Mengulangi latihan pertanyaan dari awal
+        // Mengulangi kuis dari awal
         function restartQuiz() {
             currentQuestionIndex = 0;
             correctAnswersCount = 0;
@@ -1247,11 +1715,12 @@
             goToQuizStep();
         }
 
-        // Menutup modal dan mengarahkan ke daftar Dongeng Nusantara lain
+        // Menutup modal dan mengarahkan ke daftar bacaan lain pada kategori yang sama
         function chooseAnotherDongeng() {
+            const targetCategory = currentDongeng ? currentDongeng.category : 'semua';
             closeModal('dongeng-flow-modal');
             switchTab('koleksi');
-            filterBooks('dongeng');
+            filterBooks(targetCategory);
         }
 
         // Membuka modal kamus kosakata gabungan

@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dongeng Timun Mas</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f7ff;
+  color: #26364a;
+  line-height: 1.8;
+  margin: 0;
+}
+header {
+  background: #174a7e;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+.buku {
+  background: white;
+  padding: 22px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+h2, h3 { color: #174a7e; }
+.paragraf {
+  background: #f3f7ff;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 10px;
+}
+.kosakata {
+  background: #e8f6eb;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+button, select {
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin: 5px;
+}
+button {
+  background: #2877bd;
+  color: white;
+  border: none;
+}
+footer {
+  background: #174a7e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📚 DONGENG TIMUN MAS</h1>
+<p>Perpustakaan Digital SLB Karya Murni</p>
+</header>
+
+<main>
+
+<div class="buku">
+<a href="index.html">← Kembali ke Beranda</a>
+<h2>Timun Mas</h2>
+<p><b>Kategori:</b> Dongeng Nusantara</p>
+<p><b>Tema:</b> Keberanian dan kasih sayang</p>
+<h3>Pilih Tingkat Membaca</h3>
+
+<select id="tingkat" onchange="ubahCerita()">
+<option value="dasar">Tingkat Dasar</option>
+<option value="menengah">Tingkat Menengah</option>
+<option value="lanjut">Tingkat Lanjut</option>
+</select>
+</div>
+
+<div class="buku">
+<h2>📖 Ayo Membaca!</h2>
+<div id="cerita"></div>
+</div>
+
+<div class="buku">
+<h2>🌟 Kosakata Baru</h2>
+
+<div class="kosakata">
+<b>Raksasa</b><br>
+Makhluk besar dalam dongeng.
+</div>
+
+<div class="kosakata">
+<b>Berani</b><br>
+Tidak takut menghadapi sesuatu.
+</div>
+
+<div class="kosakata">
+<b>Melarikan diri</b><br>
+Pergi untuk menyelamatkan diri.
+</div>
+
+<div class="kosakata">
+<b>Keberanian</b><br>
+Sikap berani menghadapi bahaya.
+</div>
+</div>
+
+<div class="buku">
+<h2>✏️ Ayo Menjawab!</h2>
+
+<p>1. Siapa nama anak dalam cerita?</p>
+<label><input type="radio" name="s1" value="1"> Timun Mas</label><br>
+<label><input type="radio" name="s1" value="0"> Bawang Putih</label><br>
+<label><input type="radio" name="s1" value="0"> Cinderella</label>
+
+<p>2. Siapa yang mengejar Timun Mas?</p>
+<label><input type="radio" name="s2" value="1"> Raksasa</label><br>
+<label><input type="radio" name="s2" value="0"> Kelinci</label><br>
+<label><input type="radio" name="s2" value="0"> Kura-kura</label>
+
+<p>3. Apa pesan cerita ini?</p>
+<label><input type="radio" name="s3" value="1"> Berani dan tidak mudah menyerah</label><br>
+<label><input type="radio" name="s3" value="0"> Suka berbohong</label><br>
+<label><input type="radio" name="s3" value="0"> Menjadi sombong</label>
+
+<br>
+<button onclick="periksa()">Periksa Jawaban</button>
+<h3 id="hasil"></h3>
+</div>
+
+</main>
+
+<footer>
+Perpustakaan Digital SLB Karya Murni
+<br>Gemar Membaca, Kaya Kosakata
+</footer>
+
+<script>
+const bacaan = {
+dasar: `
+<div class="paragraf">Timun Mas adalah seorang anak perempuan.</div>
+<div class="paragraf">Ia tinggal bersama ibunya.</div>
+<div class="paragraf">Suatu hari, raksasa datang mengejarnya.</div>
+<div class="paragraf">Timun Mas berlari menyelamatkan diri.</div>
+<div class="paragraf">Akhirnya, Timun Mas selamat.</div>
+`,
+menengah: `
+<div class="paragraf">Timun Mas tinggal bersama ibunya di sebuah desa. Mereka saling menyayangi.</div>
+<div class="paragraf">Suatu hari, seorang raksasa datang untuk mencari Timun Mas. Ibunya merasa khawatir.</div>
+<div class="paragraf">Ibu meminta Timun Mas berlari menyelamatkan diri. Timun Mas menggunakan benda-benda ajaib untuk menghalangi raksasa.</div>
+<div class="paragraf">Akhirnya, Timun Mas berhasil selamat dan kembali hidup bahagia bersama ibunya.</div>
+`,
+lanjut: `
+<div class="paragraf">Pada zaman dahulu, hiduplah seorang perempuan yang sangat ingin memiliki anak. Suatu hari, ia mendapatkan seorang bayi perempuan yang diberi nama Timun Mas.</div>
+<div class="paragraf">Timun Mas tumbuh menjadi anak yang baik dan pemberani. Namun, seorang raksasa datang untuk menagih janji.</div>
+<div class="paragraf">Ibunya memberikan beberapa benda ajaib untuk membantu Timun Mas melarikan diri. Timun Mas menggunakan benda-benda tersebut untuk menghambat langkah raksasa.</div>
+<div class="paragraf">Berkat keberanian dan kecerdasannya, Timun Mas berhasil lolos dan kembali bertemu dengan ibunya.</div>
+`
+};
+
+function ubahCerita() {
+  let tingkat = document.getElementById("tingkat").value;
+  document.getElementById("cerita").innerHTML = bacaan[tingkat];
+}
+
+function periksa() {
+  let skor = 0;
+  for (let i = 1; i <= 3; i++) {
+    let jawaban = document.querySelector(
+      'input[name="s' + i + '"]:checked'
+    );
+    if (jawaban && jawaban.value === "1") skor++;
+  }
+  document.getElementById("hasil").innerText =
+    "Jawaban benar: " + skor + " dari 3 soal.";
+}
+
+ubahCerita();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perpustakaan Digital SLB Karya Murni</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f6fc;
+  color: #26364a;
+}
+
+header {
+  background: #174a7e;
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 27px;
+}
+
+header p {
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+nav {
+  background: #ffffff;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px #ddd;
+}
+
+nav a {
+  color: #174a7e;
+  text-decoration: none;
+  margin: 8px;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 25px 15px;
+}
+
+h2 {
+  color: #174a7e;
+}
+
+.intro {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 3px 10px #dce4ef;
+}
+
+.card .gambar {
+  font-size: 55px;
+}
+
+.card h3 {
+  color: #174a7e;
+}
+
+.card a {
+  display: inline-block;
+  background: #2877bd;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.level {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+footer {
+  background: #174a7e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📚 PERPUSTAKAAN DIGITAL</h1>
+  <h2 style="color:white">SLB KARYA MURNI</h2>
+  <p>
+    Membaca, Memahami, dan Memperkaya Kosakata
+  </p>
+</header>
+
+<nav>
+  <a href="#beranda">Beranda</a>
+  <a href="#koleksi">Koleksi Bacaan</a>
+  <a href="#tingkat">Tingkat Membaca</a>
+</nav>
+
+<div class="container">
+
+<section id="beranda" class="intro">
+  <h2>Selamat Datang di Perpustakaan Digital!</h2>
+  <p>
+    Ayo membaca dan menjelajahi berbagai cerita menarik.
+    Temukan dongeng, cerita anak, dan teks bacaan
+    yang dilengkapi dengan gambar serta kosakata baru.
+  </p>
+</section>
+
+<section id="koleksi">
+  <h2>📖 Koleksi Bacaan</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="gambar">🏰</div>
+      <h3>Dongeng Nusantara</h3>
+      <p>Berbagai dongeng dan cerita rakyat Indonesia.</p>
+      <a href="dongeng.html">Lihat Dongeng</a>
+    </div>
+
+    <div class="card">
+      <div class="gambar">🧒</div>
+      <h3>Cerita Anak</h3>
+      <p>Cerita persahabatan, keluarga, dan kehidupan sehari-hari.</p>
+      <a href="cerita-anak.html">Baca Cerita</a>
+    </div>
+
+    <div class="card">
+      <div class="gambar">📚</div>
+      <h3>Teks Bacaan</h3>
+      <p>Bacaan sederhana untuk menambah pengetahuan.</p>
+      <a href="teks-bacaan.html">Baca Teks</a>
+    </div>
+
+    <div class="card">
+      <div class="gambar">🖼️</div>
+      <h3>Cerita Bergambar</h3>
+      <p>Membaca cerita dengan bantuan ilustrasi.</p>
+      <a href="cerita-bergambar.html">Lihat Cerita</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="tingkat">
+  <h2>🌟 Tingkat Membaca</h2>
+
+  <div class="level">
+    <h3>🟢 Tingkat Dasar</h3>
+    Bacaan pendek, kalimat sederhana, dan banyak gambar.
+  </div>
+
+  <div class="level">
+    <h3>🟡 Tingkat Menengah</h3>
+    Cerita lebih panjang dengan kosakata yang beragam.
+  </div>
+
+  <div class="level">
+    <h3>🔵 Tingkat Lanjut</h3>
+    Bacaan lebih lengkap dan latihan pemahaman cerita.
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>© 2026 Perpustakaan Digital SLB Karya Murni</p>
+  <p>Literasi untuk Semua, Belajar Sepanjang Hayat.</p>
+</footer>
+
+</body>
+</html>

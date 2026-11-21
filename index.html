@@ -1,292 +1,666 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perpustakaan Digital SLB Karya Murni</title>
-
-<style>
-  
-/* MEMPERINDAH HEADER */
-
-header {
-  background: linear-gradient(
-    135deg,
-    #174a7e,
-    #398ac4
-  ) !important;
-  text-align: center !important;
-  padding: 35px 20px !important;
-}
-
-header h1,
-header h2,
-header p {
-  color: white !important;
-  text-align: center !important;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(
-    135deg,
-    #dceeff,
-    #fff5e6,
-    #e8f5ff
-  );
-  color: #26364a;
-}
-  
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(
-    135deg,
-    #dceeff,
-    #fff5e6,
-    #e8f5ff
-  );
-  color: #26364a;
-}
-
-}
-
-header {
-  background: #174a7e;
-  color: white;
-  text-align: center;
-  padding: 35px 15px;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 27px;
-}
-
-header p {
-  margin-bottom: 0;
-  line-height: 1.6;
-}
-
-nav {
-  background: #ffffff;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 2px 6px #ddd;
-}
-
-nav a {
-  color: #174a7e;
-  text-decoration: none;
-  margin: 8px;
-  font-weight: bold;
-}
-
-.container {
-  max-width: 1050px;
-  margin: auto;
-  padding: 25px 15px;
-}
-
-h2 {
-  color: #174a7e;
-}
-
-.intro {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
-  line-height: 1.8;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 18px;
-}
-
-.card {
-  background: white;
-  border-radius: 15px;
-  padding: 22px;
-  text-align: center;
-  box-shadow: 0 3px 10px #dce4ef;
-}
-
-.card .gambar {
-  font-size: 55px;
-}
-
-.card h3 {
-  color: #174a7e;
-}
-
-.card a {
-  display: inline-block;
-  background: #2877bd;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
-.level {
-  background: white;
-  padding: 18px;
-  border-radius: 12px;
-  margin-bottom: 12px;
-  line-height: 1.7;
-}
-
-footer {
-  background: #174a7e;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 30px;
-  
-/* HIASAN CERIA PERPUSTAKAAN DIGITAL */
-
-body {
-  background:
-    radial-gradient(circle at 10% 10%, #fff2bd 0%, transparent 25%),
-    radial-gradient(circle at 90% 30%, #c9edff 0%, transparent 25%),
-    linear-gradient(135deg, #e5f3ff, #fff7e8);
-}
-
-header {
-  background: linear-gradient(135deg, #174a7e, #398ac4);
-  padding: 35px 20px;
-  border-bottom: 5px solid #ffdc83;
-}
-
-nav {
-  background: #ffffff;
-  padding: 18px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-nav a {
-  color: #174a7e;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 10px 14px;
-  border-radius: 12px;
-}
-
-nav a:hover {
-  background: #fff0bd;
-}
-
-.intro {
-  background: #ffffff;
-  border-radius: 22px;
-  box-shadow: 0 8px 20px rgba(40,80,120,0.10);
-  padding: 35px;
-}
-
-
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Digital - SLB B Karya Murni</title>
+    <!-- Memuat Tailwind CSS untuk tata letak responsif dan modern -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Google Fonts: Plus Jakarta Sans & Nunito yang ramah anak dan sangat jelas dibaca -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Nunito"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0F4C81',      // Biru utama yang tegas dan nyaman di mata
+                            sky: '#E0F2FE',       // Biru langit lembut
+                            cream: '#FFFBEB',     // Krem hangat
+                            accent: '#1D6FA5',    // Biru tombol interaktif
+                            gold: '#F59E0B',      // Kuning bintang ramah anak
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
+<body class="min-h-screen relative overflow-x-hidden font-sans text-slate-800 antialiased selection:bg-sky-200 selection:text-brand-blue">
 
-<body>
+    <!-- =====================================================================
+         LATAR BELAKANG GRADASI LEMBUT & ILUSTRASI VEKTOR NUSANTARA HALUS
+         Didesain dengan opasitas rendah agar tidak mengganggu fokus membaca
+    ====================================================================== -->
+    <div class="fixed inset-0 -z-10 pointer-events-none bg-gradient-to-br from-[#E2F1FC] via-[#F2F8FD] to-[#FDF6E7]">
+        <!-- Dekorasi Cahaya Lembut (Blob) -->
+        <div class="absolute top-[-10%] left-[-5%] w-[45vw] h-[45vw] rounded-full bg-sky-200/40 blur-3xl"></div>
+        <div class="absolute bottom-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-amber-100/60 blur-3xl"></div>
 
-<header>
-  <h1>📚 PERPUSTAKAAN DIGITAL</h1>
-  <h2 style="color:white">SLB KARYA MURNI</h2>
-  <p>
-    Membaca, Memahami, dan Memperkaya Kosakata
-  </p>
-</header>
+        <!-- Ilustrasi SVG Latar Belakang: Awan, Bintang, Buku Terbang & Bukit Nusantara -->
+        <svg class="w-full h-full opacity-55" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <!-- Awan Kiri Atas -->
+            <g transform="translate(80, 90)" fill="#FFFFFF" opacity="0.85">
+                <path d="M35 60H135C151.569 60 165 46.5685 165 30C165 14.8122 153.714 2.26106 139.062 0.27386C133.24 -14.0114 119.222 -24 103 -24C84.2442 -24 68.6184 -10.564 65.1744 7.21315C62.2449 6.42273 59.1714 6 56 6C36.67 6 21 21.67 21 41C21 48.2028 23.1757 54.8968 26.9057 60.4596C29.5322 60.1566 32.2423 60 35 60Z"/>
+            </g>
 
-<nav>
-  <a href="#beranda">Beranda</a>
-  <a href="#koleksi">Koleksi Bacaan</a>
-  <a href="#tingkat">Tingkat Membaca</a>
-</nav>
+            <!-- Awan Kanan Atas -->
+            <g transform="translate(1160, 130)" fill="#FFFFFF" opacity="0.8">
+                <path d="M40 70H160C179.882 70 196 53.8823 196 34C196 15.7746 182.457 0.713275 164.875 -1.67137C157.888 -18.8137 141.066 -30.8 121.6 -30.8C99.0931 -30.8 80.3421 -14.6768 76.2093 6.65578C72.6939 5.70727 69.0057 5.2 65.2 5.2C42.004 5.2 23.2 24.004 23.2 47.2C23.2 55.8434 25.8108 63.8762 30.2869 70.5515C33.4386 70.1879 36.6908 70 40 70Z"/>
+            </g>
 
-<div class="container">
+            <!-- Bintang-Bintang Kecil Ramah Anak -->
+            <path d="M290 140L294 150L304 154L294 158L290 168L286 158L276 154L286 150L290 140Z" fill="#FBBF24" opacity="0.7"/>
+            <path d="M1080 95L1083 103L1091 106L1083 109L1080 117L1077 109L1069 106L1077 103L1080 95Z" fill="#38BDF8" opacity="0.7"/>
+            <path d="M1320 340L1324 350L1334 354L1324 358L1320 368L1316 358L1306 354L1316 350L1320 340Z" fill="#FBBF24" opacity="0.65"/>
+            <path d="M110 420L113 428L121 431L113 434L110 442L107 434L99 431L107 428L110 420Z" fill="#38BDF8" opacity="0.65"/>
 
-<section id="beranda" class="intro">
-  <h2>Selamat Datang di Perpustakaan Digital!</h2>
-  <p>
-    Ayo membaca dan menjelajahi berbagai cerita menarik.
-    Temukan dongeng, cerita anak, dan teks bacaan
-    yang dilengkapi dengan gambar serta kosakata baru.
-  </p>
-</section>
+            <!-- Ilustrasi Buku Terbuka Melayang Halus (Kiri Tengah) -->
+            <g transform="translate(55, 270) rotate(-10)" opacity="0.45">
+                <path d="M10 25C30 15 55 18 70 30C85 18 110 15 130 25V85C110 75 85 78 70 90C55 78 30 75 10 85V25Z" fill="#BAE6FD" stroke="#0284C7" stroke-width="2.5" stroke-linejoin="round"/>
+                <line x1="70" y1="30" x2="70" y2="90" stroke="#0284C7" stroke-width="2.5"/>
+                <path d="M24 40C36 36 48 38 58 44" stroke="#0284C7" stroke-width="2" stroke-linecap="round"/>
+                <path d="M24 54C36 50 48 52 58 58" stroke="#0284C7" stroke-width="2" stroke-linecap="round"/>
+                <path d="M116 40C104 36 92 38 82 44" stroke="#0284C7" stroke-width="2" stroke-linecap="round"/>
+                <path d="M116 54C104 50 92 52 82 58" stroke="#0284C7" stroke-width="2" stroke-linecap="round"/>
+            </g>
 
-<section id="koleksi">
-  <h2>📖 Koleksi Bacaan</h2>
+            <!-- Ilustrasi Buku Terbuka Melayang Halus (Kanan Tengah) -->
+            <g transform="translate(1275, 220) rotate(12)" opacity="0.4">
+                <path d="M10 25C30 15 55 18 70 30C85 18 110 15 130 25V85C110 75 85 78 70 90C55 78 30 75 10 85V25Z" fill="#FDE68A" stroke="#D97706" stroke-width="2.5" stroke-linejoin="round"/>
+                <line x1="70" y1="30" x2="70" y2="90" stroke="#D97706" stroke-width="2.5"/>
+            </g>
 
-  <div class="grid">
-
-    <div class="card">
-      <div class="gambar">🏰</div>
-      <h3>Dongeng Nusantara</h3>
-      <p>Berbagai dongeng dan cerita rakyat Indonesia.</p>
-      <a href="dongeng.html">Lihat Dongeng</a>
+            <!-- Siluet Bukit & Alam Nusantara Lembut di Bagian Bawah -->
+            <path d="M0 780C240 710 480 830 760 760C1040 690 1260 770 1440 730V900H0V780Z" fill="#BAE6FD" opacity="0.35"/>
+            <path d="M0 820C320 870 620 750 960 810C1180 845 1330 800 1440 785V900H0V820Z" fill="#FDE68A" opacity="0.4"/>
+            
+            <!-- Siluet Pohon Tropis Nusantara Halus di Kiri & Kanan Bawah -->
+            <g transform="translate(65, 715)" opacity="0.35" fill="#0284C7">
+                <rect x="22" y="38" width="6" height="32" rx="3"/>
+                <circle cx="25" cy="28" r="18"/>
+                <circle cx="13" cy="36" r="12"/>
+                <circle cx="37" cy="36" r="12"/>
+            </g>
+            <g transform="translate(1320, 725)" opacity="0.35" fill="#D97706">
+                <rect x="22" y="38" width="6" height="32" rx="3"/>
+                <circle cx="25" cy="28" r="18"/>
+                <circle cx="13" cy="36" r="12"/>
+                <circle cx="37" cy="36" r="12"/>
+            </g>
+        </svg>
     </div>
 
-    <div class="card">
-      <div class="gambar">🧒</div>
-      <h3>Cerita Anak</h3>
-      <p>Cerita persahabatan, keluarga, dan kehidupan sehari-hari.</p>
-      <a href="cerita-anak.html">Baca Cerita</a>
+    <!-- =====================================================================
+         TOP BAR IDENTITAS SEKOLAH & TAGLINE
+    ====================================================================== -->
+    <div class="bg-brand-blue text-white text-xs sm:text-sm py-2 px-4 sm:px-8 border-b border-sky-800/40">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 text-center sm:text-left">
+            <span class="font-medium tracking-wide text-sky-100">
+                Membaca, Memahami, dan Memperkaya Kosakata
+            </span>
+            <span class="font-bold tracking-wider uppercase text-amber-300 text-xs">
+                SLB B Karya Murni
+            </span>
+        </div>
     </div>
 
-    <div class="card">
-      <div class="gambar">📚</div>
-      <h3>Teks Bacaan</h3>
-      <p>Bacaan sederhana untuk menambah pengetahuan.</p>
-      <a href="teks-bacaan.html">Baca Teks</a>
+    <!-- =====================================================================
+         HEADER & MENU NAVIGASI UTAMA
+    ====================================================================== -->
+    <header class="sticky top-0 z-30 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-200/70">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-3">
+            <!-- Logo / Judul Sekolah -->
+            <button onclick="switchTab('beranda')" class="flex items-center gap-3 text-left group focus:outline-none">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-blue to-sky-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                    <!-- Ikon Buku Terbuka -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="block font-display font-extrabold text-brand-blue text-base sm:text-lg leading-tight">
+                        Perpustakaan Digital
+                    </span>
+                    <span class="block text-xs font-semibold text-slate-500">
+                        SLB B Karya Murni
+                    </span>
+                </div>
+            </button>
+
+            <!-- Menu Navigasi: Beranda, Koleksi Bacaan, Tingkat Membaca -->
+            <nav aria-label="Navigasi Utama" class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
+                <button id="nav-beranda" onclick="switchTab('beranda')" class="nav-btn px-4 py-2.5 rounded-xl font-bold text-sm sm:text-base transition-all bg-sky-100 text-brand-blue shadow-xs">
+                    Beranda
+                </button>
+                <button id="nav-koleksi" onclick="switchTab('koleksi')" class="nav-btn px-4 py-2.5 rounded-xl font-bold text-sm sm:text-base transition-all text-slate-600 hover:bg-slate-100 hover:text-brand-blue">
+                    Koleksi Bacaan
+                </button>
+                <button id="nav-tingkat" onclick="switchTab('tingkat')" class="nav-btn px-4 py-2.5 rounded-xl font-bold text-sm sm:text-base transition-all text-slate-600 hover:bg-slate-100 hover:text-brand-blue">
+                    Tingkat Membaca
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         KONTEN UTAMA
+    ====================================================================== -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-10">
+
+        <!-- BAGIAN 1: TAMPILAN BERANDA -->
+        <div id="view-beranda" class="space-y-10 transition-opacity duration-300">
+            
+            <!-- Banner Sambutan -->
+            <section aria-labelledby="welcome-heading" class="relative bg-white/95 backdrop-blur-sm rounded-3xl p-7 sm:p-11 shadow-[0_10px_35px_-10px_rgba(15,76,129,0.12)] border border-white text-center overflow-hidden">
+                <!-- Aksen Garis Pelangi Lembut di Atas Banner -->
+                <div class="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-sky-400 via-brand-blue to-amber-400"></div>
+
+                <!-- Lencana Visual -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-brand-blue text-xs sm:text-sm font-bold mb-4">
+                    <span>📚</span>
+                    <span>Ruang Baca Visual & Interaktif</span>
+                </div>
+
+                <h1 id="welcome-heading" class="font-display font-extrabold text-2xl sm:text-4xl text-brand-blue tracking-tight mb-4">
+                    Selamat Datang di Perpustakaan Digital!
+                </h1>
+
+                <p class="max-w-2xl mx-auto text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
+                    Ayo membaca dan menjelajahi berbagai cerita menarik. Temukan dongeng, cerita anak, dan teks bacaan yang dilengkapi dengan gambar serta kosakata baru.
+                </p>
+
+                <!-- Tombol Pintas Pencarian / Jelajah Cepat -->
+                <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+                    <button onclick="switchTab('koleksi')" class="px-5 py-2.5 rounded-xl bg-sky-50 hover:bg-sky-100 text-brand-blue font-bold text-sm border border-sky-200 transition-colors flex items-center gap-2">
+                        <span>🔍</span>
+                        <span>Jelajahi Semua Buku</span>
+                    </button>
+                    <button onclick="openVocabModal()" class="px-5 py-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 font-bold text-sm border border-amber-200 transition-colors flex items-center gap-2">
+                        <span>💡</span>
+                        <span>Kamus Kosakata Baru</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Bagian 4 Kartu Kategori Koleksi Bacaan -->
+            <section aria-labelledby="kategori-heading" class="space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div class="flex items-center gap-3">
+                        <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-white shadow-sm border border-sky-100 text-xl">
+                            📖
+                        </span>
+                        <h2 id="kategori-heading" class="font-display font-extrabold text-xl sm:text-2xl text-brand-blue">
+                            Koleksi Bacaan
+                        </h2>
+                    </div>
+                    <p class="text-sm text-slate-500 font-medium">
+                        Pilih kategori bacaan favoritmu di bawah ini
+                    </p>
+                </div>
+
+                <!-- Grid 4 Kartu Kategori -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- KARTU 1: Dongeng Nusantara -->
+                    <article class="group bg-white rounded-3xl p-6 shadow-[0_8px_28px_-6px_rgba(15,76,129,0.1)] hover:shadow-[0_16px_36px_-8px_rgba(15,76,129,0.18)] border border-slate-100 hover:border-sky-200 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-center text-center">
+                        <!-- Ikon Ilustrasi SVG Kastil Nusantara -->
+                        <div class="w-20 h-20 rounded-2xl bg-pink-50 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-14 h-14" viewBox="0 0 64 64" fill="none">
+                                <rect x="14" y="26" width="36" height="28" rx="3" fill="#F472B6"/>
+                                <rect x="10" y="18" width="12" height="36" rx="2" fill="#EC4899"/>
+                                <rect x="42" y="18" width="12" height="36" rx="2" fill="#EC4899"/>
+                                <path d="M8 18L16 8L24 18H8Z" fill="#FBBF24"/>
+                                <path d="M40 18L48 8L56 18H40Z" fill="#FBBF24"/>
+                                <path d="M24 26L32 14L40 26H24Z" fill="#38BDF8"/>
+                                <path d="M27 54V42C27 39.2386 29.2386 37 32 37C34.7614 37 37 39.2386 37 42V54H27Z" fill="#FEF3C7"/>
+                            </svg>
+                        </div>
+
+                        <h3 class="font-display font-extrabold text-lg sm:text-xl text-brand-blue mb-2">
+                            Dongeng Nusantara
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+                            Berbagai dongeng dan cerita rakyat Indonesia.
+                        </p>
+                        <button onclick="openCategory('dongeng')" class="w-full py-3 px-5 rounded-xl bg-brand-accent hover:bg-brand-blue active:scale-[0.98] text-white font-bold text-sm sm:text-base shadow-sm transition-all cursor-pointer">
+                            Lihat Dongeng
+                        </button>
+                    </article>
+
+                    <!-- KARTU 2: Cerita Anak -->
+                    <article class="group bg-white rounded-3xl p-6 shadow-[0_8px_28px_-6px_rgba(15,76,129,0.1)] hover:shadow-[0_16px_36px_-8px_rgba(15,76,129,0.18)] border border-slate-100 hover:border-sky-200 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-center text-center">
+                        <!-- Ikon Ilustrasi SVG Anak Ceria -->
+                        <div class="w-20 h-20 rounded-2xl bg-amber-50 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-14 h-14" viewBox="0 0 64 64" fill="none">
+                                <circle cx="32" cy="34" r="18" fill="#FDE68A"/>
+                                <path d="M14 30C14 19 22 12 32 12C42 12 50 19 50 30C46 24 40 22 32 22C24 22 18 24 14 30Z" fill="#F59E0B"/>
+                                <circle cx="26" cy="33" r="2.5" fill="#1E293B"/>
+                                <circle cx="38" cy="33" r="2.5" fill="#1E293B"/>
+                                <path d="M26 40C28 43 36 43 38 40" stroke="#DC2626" stroke-width="2.8" stroke-linecap="round"/>
+                                <circle cx="21" cy="37" r="2.5" fill="#FDA4AF" opacity="0.7"/>
+                                <circle cx="43" cy="37" r="2.5" fill="#FDA4AF" opacity="0.7"/>
+                            </svg>
+                        </div>
+
+                        <h3 class="font-display font-extrabold text-lg sm:text-xl text-brand-blue mb-2">
+                            Cerita Anak
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+                            Cerita persahabatan, keluarga, dan kehidupan sehari-hari.
+                        </p>
+                        <button onclick="openCategory('cerita_anak')" class="w-full py-3 px-5 rounded-xl bg-brand-accent hover:bg-brand-blue active:scale-[0.98] text-white font-bold text-sm sm:text-base shadow-sm transition-all cursor-pointer">
+                            Baca Cerita
+                        </button>
+                    </article>
+
+                    <!-- KARTU 3: Teks Bacaan -->
+                    <article class="group bg-white rounded-3xl p-6 shadow-[0_8px_28px_-6px_rgba(15,76,129,0.1)] hover:shadow-[0_16px_36px_-8px_rgba(15,76,129,0.18)] border border-slate-100 hover:border-sky-200 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-center text-center">
+                        <!-- Ikon Ilustrasi SVG Tumpukan Buku -->
+                        <div class="w-20 h-20 rounded-2xl bg-emerald-50 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-14 h-14" viewBox="0 0 64 64" fill="none">
+                                <rect x="14" y="14" width="11" height="36" rx="2.5" fill="#34D399"/>
+                                <rect x="27" y="18" width="11" height="32" rx="2.5" fill="#38BDF8"/>
+                                <rect x="40" y="12" width="11" height="38" rx="2.5" fill="#F87171"/>
+                                <rect x="14" y="21" width="11" height="4" fill="#FFFFFF" opacity="0.7"/>
+                                <rect x="27" y="25" width="11" height="4" fill="#FFFFFF" opacity="0.7"/>
+                                <rect x="40" y="19" width="11" height="4" fill="#FFFFFF" opacity="0.7"/>
+                            </svg>
+                        </div>
+
+                        <h3 class="font-display font-extrabold text-lg sm:text-xl text-brand-blue mb-2">
+                            Teks Bacaan
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+                            Bacaan sederhana untuk menambah pengetahuan.
+                        </p>
+                        <button onclick="openCategory('teks_bacaan')" class="w-full py-3 px-5 rounded-xl bg-brand-accent hover:bg-brand-blue active:scale-[0.98] text-white font-bold text-sm sm:text-base shadow-sm transition-all cursor-pointer">
+                            Baca Teks
+                        </button>
+                    </article>
+
+                    <!-- KARTU 4: Cerita Bergambar -->
+                    <article class="group bg-white rounded-3xl p-6 shadow-[0_8px_28px_-6px_rgba(15,76,129,0.1)] hover:shadow-[0_16px_36px_-8px_rgba(15,76,129,0.18)] border border-slate-100 hover:border-sky-200 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-center text-center">
+                        <!-- Ikon Ilustrasi SVG Bingkai Pemandangan -->
+                        <div class="w-20 h-20 rounded-2xl bg-sky-50 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-14 h-14" viewBox="0 0 64 64" fill="none">
+                                <rect x="10" y="12" width="44" height="40" rx="5" fill="#D97706"/>
+                                <rect x="15" y="17" width="34" height="30" rx="2" fill="#BAE6FD"/>
+                                <circle cx="40" cy="24" r="4.5" fill="#FBBF24"/>
+                                <path d="M15 41L25 30L34 39L40 33L49 43V47H15V41Z" fill="#22C55E"/>
+                            </svg>
+                        </div>
+
+                        <h3 class="font-display font-extrabold text-lg sm:text-xl text-brand-blue mb-2">
+                            Cerita Bergambar
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+                            Membaca cerita dengan bantuan ilustrasi.
+                        </p>
+                        <button onclick="openCategory('cerita_bergambar')" class="w-full py-3 px-5 rounded-xl bg-brand-accent hover:bg-brand-blue active:scale-[0.98] text-white font-bold text-sm sm:text-base shadow-sm transition-all cursor-pointer">
+                            Lihat Cerita
+                        </button>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- BAGIAN 2: TAMPILAN KOLEKSI BACAAN (DAFTAR BUKU INTERAKTIF) -->
+        <div id="view-koleksi" class="hidden space-y-6">
+            <div class="bg-white/95 rounded-3xl p-6 sm:p-8 shadow-sm border border-sky-100">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <h2 class="font-display font-extrabold text-2xl text-brand-blue">📚 Daftar Koleksi Bacaan</h2>
+                        <p class="text-slate-600 text-sm mt-1">Klik salah satu buku untuk mulai membaca dan belajar kosakata baru.</p>
+                    </div>
+                    <!-- Filter Kategori -->
+                    <div class="flex flex-wrap gap-2" id="filter-buttons">
+                        <button onclick="filterBooks('semua')" data-filter="semua" class="filter-chip px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-blue text-white">Semua</button>
+                        <button onclick="filterBooks('dongeng')" data-filter="dongeng" class="filter-chip px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-sky-100">Dongeng Nusantara</button>
+                        <button onclick="filterBooks('cerita_anak')" data-filter="cerita_anak" class="filter-chip px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-sky-100">Cerita Anak</button>
+                        <button onclick="filterBooks('teks_bacaan')" data-filter="teks_bacaan" class="filter-chip px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-sky-100">Teks Bacaan</button>
+                        <button onclick="filterBooks('cerita_bergambar')" data-filter="cerita_bergambar" class="filter-chip px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-sky-100">Cerita Bergambar</button>
+                    </div>
+                </div>
+
+                <!-- Grid Buku -->
+                <div id="books-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <!-- Diisi oleh JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- BAGIAN 3: TAMPILAN TINGKAT MEMBACA -->
+        <div id="view-tingkat" class="hidden space-y-6">
+            <div class="bg-white/95 rounded-3xl p-6 sm:p-8 shadow-sm border border-sky-100">
+                <h2 class="font-display font-extrabold text-2xl text-brand-blue mb-2">🌱 Tingkat Membaca</h2>
+                <p class="text-slate-600 text-sm sm:text-base mb-6">Pilih tingkat bacaan yang sesuai dengan kemampuanmu agar belajar terasa menyenangkan.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Tingkat 1 -->
+                    <div class="rounded-2xl p-6 bg-emerald-50/70 border border-emerald-200 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold mb-3">Tingkat 1 • Pemula</span>
+                            <h3 class="font-display font-extrabold text-xl text-slate-800 mb-2">Kalimat Pendek & Gambar</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Mengenal kata benda, kata kerja sederhana, dan kalimat pendek dengan bantuan ilustrasi penuh.</p>
+                        </div>
+                        <button onclick="filterByLevel('Tingkat 1')" class="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition-colors">
+                            Lihat Bacaan Tingkat 1
+                        </button>
+                    </div>
+
+                    <!-- Tingkat 2 -->
+                    <div class="rounded-2xl p-6 bg-sky-50/70 border border-sky-200 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-brand-accent text-white text-xs font-bold mb-3">Tingkat 2 • Menengah</span>
+                            <h3 class="font-display font-extrabold text-xl text-slate-800 mb-2">Cerita Paragraf Pendek</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Membaca alur cerita sehari-hari dan dongeng singkat disertai arti kosakata penting.</p>
+                        </div>
+                        <button onclick="filterByLevel('Tingkat 2')" class="w-full py-2.5 px-4 rounded-xl bg-brand-accent hover:bg-brand-blue text-white font-bold text-sm transition-colors">
+                            Lihat Bacaan Tingkat 2
+                        </button>
+                    </div>
+
+                    <!-- Tingkat 3 -->
+                    <div class="rounded-2xl p-6 bg-amber-50/70 border border-amber-200 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-amber-600 text-white text-xs font-bold mb-3">Tingkat 3 • Mahir</span>
+                            <h3 class="font-display font-extrabold text-xl text-slate-800 mb-2">Pengetahuan & Dongeng Utuh</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Memahami isi teks bacaan pengetahuan umum dan cerita rakyat Nusantara yang lebih kaya.</p>
+                        </div>
+                        <button onclick="filterByLevel('Tingkat 3')" class="w-full py-2.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm transition-colors">
+                            Lihat Bacaan Tingkat 3
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- =====================================================================
+         FOOTER SEDERHANA & INKLUSIF
+    ====================================================================== -->
+    <footer class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-6 text-center text-slate-500 text-xs sm:text-sm">
+        <p class="font-semibold text-slate-600">Perpustakaan Digital SLB B Karya Murni</p>
+        <p class="mt-1">Membaca, Memahami, dan Memperkaya Kosakata dengan Visual yang Ramah</p>
+    </footer>
+
+    <!-- =====================================================================
+         MODAL BACA CERITA & KOSAKATA INTERAKTIF
+    ====================================================================== -->
+    <div id="reader-modal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-sky-100 p-6 sm:p-8 relative">
+            <button onclick="closeModal('reader-modal')" aria-label="Tutup jendela bacaan" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold flex items-center justify-center transition-colors">
+                ✕
+            </button>
+
+            <div id="reader-badge" class="inline-block px-3 py-1 rounded-full bg-sky-100 text-brand-blue text-xs font-bold mb-3">
+                Kategori
+            </div>
+            <h3 id="reader-title" class="font-display font-extrabold text-2xl sm:text-3xl text-brand-blue mb-4">
+                Judul Bacaan
+            </h3>
+
+            <!-- Area Visual Ilustrasi Cerita -->
+            <div id="reader-visual" class="w-full rounded-2xl bg-gradient-to-r from-sky-50 to-amber-50 border border-sky-100 p-6 mb-5 flex flex-col items-center justify-center text-center">
+                <div id="reader-emoji" class="text-6xl mb-2">🏰</div>
+                <p id="reader-caption" class="text-xs font-semibold text-slate-500">Ilustrasi Pendukung Cerita</p>
+            </div>
+
+            <!-- Isi Teks Bacaan dengan Ukuran Huruf Nyaman -->
+            <div id="reader-content" class="text-slate-700 text-base sm:text-lg leading-loose space-y-4 mb-6 font-medium">
+                <!-- Isi cerita -->
+            </div>
+
+            <!-- Kotak Kosakata Baru (Sangat Bermanfaat untuk Siswa SLB B) -->
+            <div class="bg-amber-50/90 border border-amber-200 rounded-2xl p-4 sm:p-5">
+                <h4 class="font-display font-extrabold text-amber-900 text-sm sm:text-base mb-3 flex items-center gap-2">
+                    <span>💡</span>
+                    <span>Kosakata Baru & Artinya:</span>
+                </h4>
+                <div id="reader-vocab" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <!-- Daftar kata + arti visual -->
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-end">
+                <button onclick="closeModal('reader-modal')" class="px-6 py-2.5 rounded-xl bg-brand-accent hover:bg-brand-blue text-white font-bold text-sm transition-colors">
+                    Selesai Membaca
+                </button>
+            </div>
+        </div>
     </div>
 
-    <div class="card">
-      <div class="gambar">🖼️</div>
-      <h3>Cerita Bergambar</h3>
-      <p>Membaca cerita dengan bantuan ilustrasi.</p>
-      <a href="cerita-bergambar.html">Lihat Cerita</a>
+    <!-- =====================================================================
+         MODAL KAMUS KOSAKATA VISUAL
+    ====================================================================== -->
+    <div id="vocab-modal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full max-h-[85vh] overflow-y-auto shadow-2xl border border-amber-100 p-6 sm:p-8 relative">
+            <button onclick="closeModal('vocab-modal')" aria-label="Tutup kamus" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold flex items-center justify-center">
+                ✕
+            </button>
+            <h3 class="font-display font-extrabold text-2xl text-brand-blue mb-2">💡 Kamus Kosakata Visual</h3>
+            <p class="text-slate-600 text-sm mb-5">Pelajari arti kata-kata baru dari koleksi bacaan SLB B Karya Murni.</p>
+            <div class="space-y-3" id="all-vocab-list">
+                <!-- Diisi JS -->
+            </div>
+        </div>
     </div>
 
-  </div>
-</section>
+    <!-- =====================================================================
+         JAVASCRIPT INTERAKTIF
+    ====================================================================== -->
+    <script>
+        // Data contoh buku untuk tiap kategori agar halaman hidup dan fungsional
+        const booksData = [
+            {
+                id: 1,
+                category: 'dongeng',
+                categoryLabel: 'Dongeng Nusantara',
+                level: 'Tingkat 2',
+                title: 'Legenda Danau Toba',
+                emoji: '🏞️🐟',
+                caption: 'Pemandangan Danau Toba yang indah di Sumatera Utara',
+                summary: 'Kisah petani yang jujur, seekor ikan ajaib, dan asal mula indahnya Danau Toba.',
+                paragraphs: [
+                    'Dahulu kala di Sumatera Utara, hiduplah seorang pemuda bernama Toba. Ia bekerja sebagai petani yang rajin dan baik hati.',
+                    'Suatu hari, Toba memancing di sungai dan mendapatkan seekor ikan mas yang sangat indah. Ternyata, ikan itu berubah menjadi seorang putri yang ramah.',
+                    'Mereka pun hidup bahagia dan dikaruniai seorang anak laki-laki bernama Samosir. Dari kisah inilah lahir legenda Danau Toba dan Pulau Samosir yang indah.'
+                ],
+                vocab: [
+                    { word: 'Legenda', meaning: 'Cerita rakyat zaman dahulu tentang asal-usul suatu tempat.' },
+                    { word: 'Dikaruniai', meaning: 'Diberi anugerah atau hadiah kebahagiaan.' }
+                ]
+            },
+            {
+                id: 2,
+                category: 'cerita_anak',
+                categoryLabel: 'Cerita Anak',
+                level: 'Tingkat 1',
+                title: 'Rani Gemar Menanam Bunga',
+                emoji: '🌻👧',
+                caption: 'Rani menyiram bunga matahari setiap pagi',
+                summary: 'Cerita tentang Rani yang merawat taman sekolah bersama teman-temannya.',
+                paragraphs: [
+                    'Setiap pagi sebelum masuk kelas, Rani menyiram tanaman bunga di halaman sekolah.',
+                    'Rani menggunakan gembor kecil berisi air bersih. Teman-temannya, Budi dan Sari, ikut membantu mencabut rumput liar.',
+                    'Beberapa minggu kemudian, bunga matahari mekar berwarna kuning cerah. Halaman sekolah menjadi sangat asri dan indah.'
+                ],
+                vocab: [
+                    { word: 'Gembor', meaning: 'Alat penyiram tanaman yang memiliki cerat berlubang.' },
+                    { word: 'Asri', meaning: 'Indah, sejuk, dan sedap dipandang mata.' }
+                ]
+            },
+            {
+                id: 3,
+                category: 'teks_bacaan',
+                categoryLabel: 'Teks Bacaan',
+                level: 'Tingkat 3',
+                title: 'Mengenal Alat Transportasi Ramah Lingkungan',
+                emoji: '🚲🌱',
+                caption: 'Bersepeda menyehatkan tubuh dan menjaga udara tetap bersih',
+                summary: 'Bacaan pengetahuan sederhana tentang manfaat bersepeda dan berjalan kaki.',
+                paragraphs: [
+                    'Sepeda adalah salah satu alat transportasi yang ramah lingkungan karena tidak mengeluarkan asap.',
+                    'Dengan bersepeda ke tempat yang dekat, udara di sekitar kita tetap bersih dan sehat untuk dihirup.',
+                    'Selain menjaga lingkungan, mengayuh sepeda juga membuat otot kaki menjadi kuat dan tubuh tetap bugar.'
+                ],
+                vocab: [
+                    { word: 'Transportasi', meaning: 'Alat atau kendaraan untuk berpindah dari satu tempat ke tempat lain.' },
+                    { word: 'Bugar', meaning: 'Sehat dan segar seluruh tubuh.' }
+                ]
+            },
+            {
+                id: 4,
+                category: 'cerita_bergambar',
+                categoryLabel: 'Cerita Bergambar',
+                level: 'Tingkat 1',
+                title: 'Petualangan Kancil & Kura-Kura',
+                emoji: '🦌🐢',
+                caption: 'Kancil dan Kura-kura bekerja sama menyeberangi sungai',
+                summary: 'Cerita bergambar tentang pentingnya saling tolong-menolong antar sahabat.',
+                paragraphs: [
+                    'Di sebuah hutan yang hijau, Kancil dan Kura-kura ingin memetik buah jambu di seberang sungai.',
+                    'Air sungai mengalir cukup deras. Kura-kura pandai berenang, sedangkan Kancil pandai melompat dan memetik buah.',
+                    'Mereka pun bekerja sama. Kura-kura membantu Kancil menyeberang, lalu Kancil memetikkan buah jambu yang manis untuk dimakan bersama.'
+                ],
+                vocab: [
+                    { word: 'Deras', meaning: 'Aliran air yang bergerak sangat cepat dan kuat.' },
+                    { word: 'Bekerja Sama', meaning: 'Melakukan pekerjaan secara bersama-sama agar lebih mudah.' }
+                ]
+            }
+        ];
 
-<section id="tingkat">
-  <h2>🌟 Tingkat Membaca</h2>
+        // Berpindah tab navigasi utama
+        function switchTab(tabName) {
+            const views = ['beranda', 'koleksi', 'tingkat'];
+            views.forEach(v => {
+                document.getElementById(`view-${v}`).classList.add('hidden');
+                const btn = document.getElementById(`nav-${v}`);
+                btn.classList.remove('bg-sky-100', 'text-brand-blue', 'shadow-xs');
+                btn.classList.add('text-slate-600');
+            });
 
-  <div class="level">
-    <h3>🟢 Tingkat Dasar</h3>
-    Bacaan pendek, kalimat sederhana, dan banyak gambar.
-  </div>
+            document.getElementById(`view-${tabName}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`nav-${tabName}`);
+            activeBtn.classList.add('bg-sky-100', 'text-brand-blue', 'shadow-xs');
+            activeBtn.classList.remove('text-slate-600');
 
-  <div class="level">
-    <h3>🟡 Tingkat Menengah</h3>
-    Cerita lebih panjang dengan kosakata yang beragam.
-  </div>
+            if (tabName === 'koleksi') {
+                renderBooks(booksData);
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-  <div class="level">
-    <h3>🔵 Tingkat Lanjut</h3>
-    Bacaan lebih lengkap dan latihan pemahaman cerita.
-  </div>
-</section>
+        // Membuka kategori tertentu dari 4 kartu di Beranda
+        function openCategory(categoryKey) {
+            switchTab('koleksi');
+            filterBooks(categoryKey);
+        }
 
-</div>
+        // Filter buku berdasarkan kategori
+        function filterBooks(categoryKey) {
+            // Update tampilan tombol filter
+            document.querySelectorAll('.filter-chip').forEach(chip => {
+                if (chip.dataset.filter === categoryKey) {
+                    chip.classList.remove('bg-slate-100', 'text-slate-700');
+                    chip.classList.add('bg-brand-blue', 'text-white');
+                } else {
+                    chip.classList.add('bg-slate-100', 'text-slate-700');
+                    chip.classList.remove('bg-brand-blue', 'text-white');
+                }
+            });
 
-<footer>
-  <p>© 2026 Perpustakaan Digital SLB Karya Murni</p>
-  <p>Literasi untuk Semua, Belajar Sepanjang Hayat.</p>
-</footer>
+            const filtered = categoryKey === 'semua'
+                ? booksData
+                : booksData.filter(b => b.category === categoryKey);
+            renderBooks(filtered);
+        }
 
+        // Filter buku berdasarkan tingkat membaca
+        function filterByLevel(levelLabel) {
+            switchTab('koleksi');
+            const filtered = booksData.filter(b => b.level === levelLabel);
+            renderBooks(filtered.length ? filtered : booksData);
+        }
+
+        // Menampilkan daftar kartu buku di tab Koleksi Bacaan
+        function renderBooks(list) {
+            const grid = document.getElementById('books-grid');
+            grid.innerHTML = list.map(book => `
+                <div class="rounded-2xl border border-slate-200/80 bg-white p-5 hover:border-sky-300 hover:shadow-md transition-all flex flex-col justify-between gap-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-16 h-16 rounded-2xl bg-sky-50 flex items-center justify-center text-3xl shrink-0">
+                            ${book.emoji}
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-sky-100 text-brand-blue">${book.categoryLabel}</span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800">${book.level}</span>
+                            </div>
+                            <h3 class="font-display font-extrabold text-lg text-slate-800">${book.title}</h3>
+                            <p class="text-slate-600 text-sm mt-1">${book.summary}</p>
+                        </div>
+                    </div>
+                    <button onclick="openReader(${book.id})" class="w-full py-2.5 px-4 rounded-xl bg-brand-accent hover:bg-brand-blue text-white font-bold text-sm transition-colors">
+                        Mulai Membaca
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // Membuka jendela baca cerita & kosakata
+        function openReader(bookId) {
+            const book = booksData.find(b => b.id === bookId);
+            if (!book) return;
+
+            document.getElementById('reader-badge').textContent = `${book.categoryLabel} • ${book.level}`;
+            document.getElementById('reader-title').textContent = book.title;
+            document.getElementById('reader-emoji').textContent = book.emoji;
+            document.getElementById('reader-caption').textContent = book.caption;
+
+            document.getElementById('reader-content').innerHTML = book.paragraphs
+                .map(p => `<p>${p}</p>`)
+                .join('');
+
+            document.getElementById('reader-vocab').innerHTML = book.vocab
+                .map(v => `
+                    <div class="bg-white rounded-xl p-3 border border-amber-200/80">
+                        <span class="block font-extrabold text-brand-blue text-sm">${v.word}</span>
+                        <span class="block text-slate-600 text-xs mt-0.5 leading-relaxed">${v.meaning}</span>
+                    </div>
+                `).join('');
+
+            document.getElementById('reader-modal').classList.remove('hidden');
+        }
+
+        // Membuka modal kamus kosakata gabungan
+        function openVocabModal() {
+            const allVocab = booksData.flatMap(b => b.vocab.map(v => ({ ...v, source: b.title })));
+            document.getElementById('all-vocab-list').innerHTML = allVocab.map(item => `
+                <div class="p-4 rounded-2xl bg-sky-50/70 border border-sky-100">
+                    <div class="flex items-center justify-between">
+                        <span class="font-display font-extrabold text-brand-blue text-base">${item.word}</span>
+                        <span class="text-[11px] font-semibold text-slate-400">Dari: ${item.source}</span>
+                    </div>
+                    <p class="text-slate-700 text-sm mt-1">${item.meaning}</p>
+                </div>
+            `).join('');
+            document.getElementById('vocab-modal').classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    </script>
 </body>
 </html>

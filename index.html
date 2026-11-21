@@ -441,6 +441,156 @@
     </div>
 
     <!-- =====================================================================
+         MODAL ALUR BELAJAR SETELAH MEMBACA DONGENG:
+         1. Baca Dongeng -> 2. Kosakata Baru -> 3. Latihan Menjawab Pertanyaan
+    ====================================================================== -->
+    <div id="dongeng-flow-modal" class="fixed inset-0 z-50 hidden bg-slate-900/55 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5">
+        <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-sky-100 p-5 sm:p-8 relative">
+            <button onclick="closeModal('dongeng-flow-modal')" aria-label="Tutup jendela dongeng" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold flex items-center justify-center transition-colors cursor-pointer">
+                ✕
+            </button>
+
+            <!-- Indikator 3 Langkah Belajar Visual -->
+            <div class="mb-6 pr-10">
+                <div class="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-bold">
+                    <span id="step-pill-1" class="px-3.5 py-1.5 rounded-full bg-brand-blue text-white flex items-center gap-1.5">
+                        <span>1.</span>
+                        <span>Baca Dongeng</span>
+                    </span>
+                    <span class="text-slate-300">➜</span>
+                    <span id="step-pill-2" class="px-3.5 py-1.5 rounded-full bg-slate-100 text-slate-500 flex items-center gap-1.5">
+                        <span>2.</span>
+                        <span>Kosakata Baru</span>
+                    </span>
+                    <span class="text-slate-300">➜</span>
+                    <span id="step-pill-3" class="px-3.5 py-1.5 rounded-full bg-slate-100 text-slate-500 flex items-center gap-1.5">
+                        <span>3.</span>
+                        <span>Latihan Pertanyaan</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- TAHAP 1: BACA DONGENG -->
+            <div id="dongeng-step-1" class="space-y-5">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100 text-pink-800 text-xs font-bold">
+                    <span>🏰</span>
+                    <span>Dongeng Nusantara • <span id="df-level">Tingkat 2</span></span>
+                </div>
+                <h3 id="df-title" class="font-display font-extrabold text-2xl sm:text-3xl text-brand-blue">
+                    Judul Dongeng
+                </h3>
+
+                <!-- Ilustrasi Dongeng -->
+                <div class="w-full rounded-2xl bg-gradient-to-r from-sky-50 via-amber-50/70 to-pink-50 border border-sky-100 p-6 flex flex-col items-center justify-center text-center">
+                    <div id="df-emoji" class="text-6xl sm:text-7xl mb-2">🏞️🐟</div>
+                    <p id="df-caption" class="text-xs sm:text-sm font-semibold text-slate-600">Ilustrasi Dongeng</p>
+                </div>
+
+                <!-- Isi Dongeng -->
+                <div id="df-story" class="text-slate-700 text-base sm:text-lg leading-loose space-y-4 font-medium bg-slate-50/70 rounded-2xl p-5 border border-slate-100">
+                    <!-- Diisi oleh JS -->
+                </div>
+
+                <!-- Tombol Selesai Membaca Dongeng -->
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <span class="text-xs sm:text-sm text-slate-500 font-medium">
+                        Sudah selesai membaca? Ayo pelajari kata-kata baru!
+                    </span>
+                    <button onclick="goToVocabStep()" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-brand-accent hover:bg-brand-blue text-white font-display font-extrabold text-sm sm:text-base shadow-md transition-all cursor-pointer flex items-center justify-center gap-2">
+                        <span>Selesai Membaca Dongeng</span>
+                        <span>➜</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- TAHAP 2: KOSAKATA BARU DARI DONGENG -->
+            <div id="dongeng-step-2" class="hidden space-y-5">
+                <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-200/80 text-amber-900 text-xs font-bold mb-2">
+                        <span>💡</span>
+                        <span>Langkah 2 • Kosakata Baru dari Dongeng</span>
+                    </div>
+                    <h3 id="df-vocab-heading" class="font-display font-extrabold text-xl sm:text-2xl text-slate-800">
+                        Kosakata Baru dari Dongeng
+                    </h3>
+                    <p class="text-slate-600 text-sm sm:text-base mt-1">
+                        Bacalah arti kata dan contoh kalimatnya pelan-pelan agar kamu makin paham ceritanya.
+                    </p>
+                </div>
+
+                <!-- Kartu-Kartu Kosakata Baru -->
+                <div id="df-vocab-cards" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Diisi oleh JS -->
+                </div>
+
+                <!-- Navigasi Tahap 2 -->
+                <div class="pt-3 flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <button onclick="goToStoryStep()" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm transition-colors cursor-pointer">
+                        ← Kembali Baca Dongeng
+                    </button>
+                    <button onclick="goToQuizStep()" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-display font-extrabold text-sm sm:text-base shadow-md transition-all cursor-pointer flex items-center justify-center gap-2">
+                        <span>Lanjut Menjawab Pertanyaan</span>
+                        <span>➜</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- TAHAP 3: LATIHAN MENJAWAB PERTANYAAN -->
+            <div id="dongeng-step-3" class="hidden space-y-5">
+                <div class="bg-sky-50 border border-sky-200 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-200/80 text-brand-blue text-xs font-bold mb-1.5">
+                            <span>✏️</span>
+                            <span>Langkah 3 • Latihan Menjawab Pertanyaan</span>
+                        </div>
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-brand-blue">
+                            Ayo Jawab Pertanyaan Dongeng!
+                        </h3>
+                    </div>
+                    <div id="quiz-progress-badge" class="px-3.5 py-1.5 rounded-xl bg-white border border-sky-200 text-brand-blue font-extrabold text-xs sm:text-sm self-start sm:self-center">
+                        Pertanyaan 1 dari 3
+                    </div>
+                </div>
+
+                <!-- Wadah Soal Aktif -->
+                <div id="quiz-question-box" class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 space-y-5 shadow-xs">
+                    <!-- Diisi oleh JS -->
+                </div>
+
+                <!-- Wadah Hasil & Bintang Penghargaan di Akhir Sesi -->
+                <div id="quiz-result-box" class="hidden bg-gradient-to-br from-amber-50 via-white to-sky-50 rounded-3xl border-2 border-amber-200 p-6 sm:p-8 text-center space-y-4">
+                    <div id="result-stars" class="text-4xl sm:text-5xl tracking-wider">⭐⭐⭐</div>
+                    <h4 id="result-title" class="font-display font-extrabold text-2xl sm:text-3xl text-brand-blue">
+                        Hebat Sekali!
+                    </h4>
+                    <p id="result-score-text" class="text-slate-700 font-bold text-base sm:text-lg">
+                        Kamu menjawab 3 dari 3 pertanyaan dengan benar.
+                    </p>
+                    <p id="result-encouragement" class="text-slate-600 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+                        Kamu sudah membaca dongeng, belajar kosakata baru, dan menjawab pertanyaan dengan baik. Terus semangat membaca ya!
+                    </p>
+
+                    <div class="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
+                        <button onclick="restartQuiz()" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm sm:text-base transition-colors cursor-pointer">
+                            🔄 Ulangi Latihan
+                        </button>
+                        <button onclick="chooseAnotherDongeng()" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-brand-accent hover:bg-brand-blue text-white font-bold text-sm sm:text-base transition-colors cursor-pointer">
+                            📚 Baca Dongeng Lain
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tombol Kembali ke Kosakata -->
+                <div id="quiz-footer-nav" class="pt-1 flex items-center justify-between">
+                    <button onclick="goToVocabStep()" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm transition-colors cursor-pointer">
+                        ← Lihat Lagi Kosakata Baru
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
          MODAL KAMUS KOSAKATA VISUAL
     ====================================================================== -->
     <div id="vocab-modal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4">
@@ -477,8 +627,56 @@
                     'Mereka pun hidup bahagia dan dikaruniai seorang anak laki-laki bernama Samosir. Dari kisah inilah lahir legenda Danau Toba dan Pulau Samosir yang indah.'
                 ],
                 vocab: [
-                    { word: 'Legenda', meaning: 'Cerita rakyat zaman dahulu tentang asal-usul suatu tempat.' },
-                    { word: 'Dikaruniai', meaning: 'Diberi anugerah atau hadiah kebahagiaan.' }
+                    {
+                        word: 'Legenda',
+                        icon: '📜',
+                        meaning: 'Cerita rakyat zaman dahulu tentang asal-usul suatu tempat.',
+                        example: 'Cerita asal mula Danau Toba termasuk legenda dari Sumatera Utara.'
+                    },
+                    {
+                        word: 'Dikaruniai',
+                        icon: '🎁',
+                        meaning: 'Diberi anugerah atau hadiah kebahagiaan.',
+                        example: 'Keluarga Toba dikaruniai seorang anak laki-laki bernama Samosir.'
+                    },
+                    {
+                        word: 'Ramah',
+                        icon: '😊',
+                        meaning: 'Baik hati, suka tersenyum, dan mudah menyapa orang lain.',
+                        example: 'Putri ikan itu bersikap ramah kepada semua warga desa.'
+                    }
+                ],
+                questions: [
+                    {
+                        question: 'Di mana tempat tinggal pemuda bernama Toba dalam dongeng ini?',
+                        options: [
+                            { label: 'Di Sumatera Utara', icon: '🗺️' },
+                            { label: 'Di puncak gunung es', icon: '🏔️' },
+                            { label: 'Di dasar lautan dalam', icon: '🌊' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Benar! Toba tinggal dan bekerja sebagai petani di Sumatera Utara.'
+                    },
+                    {
+                        question: 'Hewan apa yang dipancing oleh Toba di sungai?',
+                        options: [
+                            { label: 'Seekor burung elang', icon: '🦅' },
+                            { label: 'Seekor ikan mas yang indah', icon: '🐟' },
+                            { label: 'Seekor kelinci putih', icon: '🐇' }
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Tepat sekali! Toba memancing seekor ikan mas yang sangat indah.'
+                    },
+                    {
+                        question: 'Apa arti kata "ramah" pada cerita tersebut?',
+                        options: [
+                            { label: 'Suka marah-marah', icon: '😠' },
+                            { label: 'Selalu tidur sepanjang hari', icon: '😴' },
+                            { label: 'Baik hati dan suka menyapa', icon: '😊' }
+                        ],
+                        correctIndex: 2,
+                        explanation: 'Bagus! Ramah artinya baik hati, suka tersenyum, dan mudah menyapa.'
+                    }
                 ]
             },
             {
@@ -496,8 +694,38 @@
                     'Beberapa minggu kemudian, bunga matahari mekar berwarna kuning cerah. Halaman sekolah menjadi sangat asri dan indah.'
                 ],
                 vocab: [
-                    { word: 'Gembor', meaning: 'Alat penyiram tanaman yang memiliki cerat berlubang.' },
-                    { word: 'Asri', meaning: 'Indah, sejuk, dan sedap dipandang mata.' }
+                    {
+                        word: 'Gembor',
+                        icon: '🚿',
+                        meaning: 'Alat penyiram tanaman yang memiliki cerat berlubang.',
+                        example: 'Rani memakai gembor kecil untuk menyiram bunga.'
+                    },
+                    {
+                        word: 'Asri',
+                        icon: '🌿',
+                        meaning: 'Indah, sejuk, dan sedap dipandang mata.',
+                        example: 'Taman sekolah terlihat asri karena banyak tanaman hijau.'
+                    }
+                ],
+                questions: [
+                    {
+                        question: 'Kapan Rani menyiram tanaman bunga di sekolah?',
+                        options: [
+                            { label: 'Setiap pagi sebelum masuk kelas', icon: '🌅' },
+                            { label: 'Saat malam hari gelap', icon: '🌙' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Betul! Rani menyiram bunga setiap pagi sebelum masuk kelas.'
+                    },
+                    {
+                        question: 'Apa warna bunga matahari saat sudah mekar?',
+                        options: [
+                            { label: 'Hitam pekat', icon: '⚫' },
+                            { label: 'Kuning cerah', icon: '🌻' }
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Hebat! Bunga matahari mekar berwarna kuning cerah.'
+                    }
                 ]
             },
             {
@@ -515,8 +743,38 @@
                     'Selain menjaga lingkungan, mengayuh sepeda juga membuat otot kaki menjadi kuat dan tubuh tetap bugar.'
                 ],
                 vocab: [
-                    { word: 'Transportasi', meaning: 'Alat atau kendaraan untuk berpindah dari satu tempat ke tempat lain.' },
-                    { word: 'Bugar', meaning: 'Sehat dan segar seluruh tubuh.' }
+                    {
+                        word: 'Transportasi',
+                        icon: '🚲',
+                        meaning: 'Alat atau kendaraan untuk berpindah dari satu tempat ke tempat lain.',
+                        example: 'Sepeda adalah alat transportasi yang tidak berpolusi.'
+                    },
+                    {
+                        word: 'Bugar',
+                        icon: '💪',
+                        meaning: 'Sehat dan segar seluruh tubuh.',
+                        example: 'Tubuh terasa bugar setelah berolahraga pagi.'
+                    }
+                ],
+                questions: [
+                    {
+                        question: 'Mengapa sepeda disebut alat transportasi ramah lingkungan?',
+                        options: [
+                            { label: 'Karena tidak mengeluarkan asap', icon: '🍃' },
+                            { label: 'Karena suaranya sangat keras', icon: '📢' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Benar! Sepeda tidak mengeluarkan asap sehingga udara tetap bersih.'
+                    },
+                    {
+                        question: 'Apa manfaat mengayuh sepeda bagi tubuh kita?',
+                        options: [
+                            { label: 'Membuat otot kaki kuat dan tubuh bugar', icon: '💪' },
+                            { label: 'Membuat badan cepat lelah dan sakit', icon: '🤒' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Tepat! Mengayuh sepeda membuat otot kaki kuat dan tubuh bugar.'
+                    }
                 ]
             },
             {
@@ -534,11 +792,114 @@
                     'Mereka pun bekerja sama. Kura-kura membantu Kancil menyeberang, lalu Kancil memetikkan buah jambu yang manis untuk dimakan bersama.'
                 ],
                 vocab: [
-                    { word: 'Deras', meaning: 'Aliran air yang bergerak sangat cepat dan kuat.' },
-                    { word: 'Bekerja Sama', meaning: 'Melakukan pekerjaan secara bersama-sama agar lebih mudah.' }
+                    {
+                        word: 'Deras',
+                        icon: '🌊',
+                        meaning: 'Aliran air yang bergerak sangat cepat dan kuat.',
+                        example: 'Air sungai mengalir deras setelah hujan turun.'
+                    },
+                    {
+                        word: 'Bekerja Sama',
+                        icon: '🤝',
+                        meaning: 'Melakukan pekerjaan secara bersama-sama agar lebih mudah.',
+                        example: 'Kancil dan Kura-kura bekerja sama memetik buah.'
+                    }
+                ],
+                questions: [
+                    {
+                        question: 'Buah apa yang ingin dipetik oleh Kancil dan Kura-kura?',
+                        options: [
+                            { label: 'Buah jambu', icon: '🍎' },
+                            { label: 'Buah durian', icon: '🥭' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Benar sekali! Mereka ingin memetik buah jambu di seberang sungai.'
+                    },
+                    {
+                        question: 'Bagaimana cara mereka menyelesaikan tugas bersama?',
+                        options: [
+                            { label: 'Saling bekerja sama sesuai kemampuan', icon: '🤝' },
+                            { label: 'Saling berebut dan bertengkar', icon: '⚡' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Bagus! Mereka bekerja sama dengan saling membantu.'
+                    }
+                ]
+            },
+            {
+                id: 5,
+                category: 'dongeng',
+                categoryLabel: 'Dongeng Nusantara',
+                level: 'Tingkat 2',
+                title: 'Asal Mula Telaga Warna',
+                emoji: '🌈💧',
+                caption: 'Air telaga berkilau indah dengan warna pelangi',
+                summary: 'Dongeng Nusantara tentang kebaikan hati, rasa syukur, dan telaga yang berkilau indah.',
+                paragraphs: [
+                    'Di sebuah kerajaan yang damai, tinggal seorang raja dan ratu yang sangat menyayangi rakyatnya.',
+                    'Suatu hari, penduduk desa mengadakan pesta syukur atas panen yang melimpah. Semua warga saling berbagi makanan dengan gembira.',
+                    'Tiba-tiba, muncul mata air jernih yang memancarkan warna-warni indah seperti pelangi. Warga menamainya Telaga Warna sebagai tanda rasa syukur.'
+                ],
+                vocab: [
+                    {
+                        word: 'Melimpah',
+                        icon: '🌾',
+                        meaning: 'Banyak sekali dan mencukupi untuk semua orang.',
+                        example: 'Hasil panen padi tahun ini sangat melimpah.'
+                    },
+                    {
+                        word: 'Bersyukur',
+                        icon: '🙏',
+                        meaning: 'Merasa senang dan berterima kasih atas kebaikan yang diterima.',
+                        example: 'Warga bersyukur karena panen berjalan lancar.'
+                    },
+                    {
+                        word: 'Berkilau',
+                        icon: '✨',
+                        meaning: 'Bercahaya terang dan indah saat terkena sinar.',
+                        example: 'Air telaga berkilau indah di bawah cahaya matahari.'
+                    }
+                ],
+                questions: [
+                    {
+                        question: 'Mengapa penduduk desa mengadakan pesta dalam dongeng ini?',
+                        options: [
+                            { label: 'Sebagai rasa syukur atas panen yang melimpah', icon: '🌾' },
+                            { label: 'Karena hujan tidak pernah turun', icon: '☀️' },
+                            { label: 'Karena kehilangan semua hewan ternak', icon: '🐄' }
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Benar! Warga mengadakan pesta sebagai rasa syukur atas panen yang melimpah.'
+                    },
+                    {
+                        question: 'Seperti apa tampilan air di Telaga Warna?',
+                        options: [
+                            { label: 'Keruh dan berpasir', icon: '🟤' },
+                            { label: 'Berkilau dengan warna-warni indah', icon: '🌈' },
+                            { label: 'Membeku menjadi es', icon: '🧊' }
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Tepat sekali! Air telaga berkilau dengan warna-warni indah.'
+                    },
+                    {
+                        question: 'Apa arti kata "melimpah" pada cerita tersebut?',
+                        options: [
+                            { label: 'Habis tidak tersisa', icon: '🫙' },
+                            { label: 'Sangat sedikit sekali', icon: '🤏' },
+                            { label: 'Banyak sekali dan mencukupi', icon: '🧺' }
+                        ],
+                        correctIndex: 2,
+                        explanation: 'Hebat! Melimpah artinya banyak sekali dan mencukupi untuk semua.'
+                    }
                 ]
             }
         ];
+
+        // State alur dongeng aktif
+        let currentDongeng = null;
+        let currentQuestionIndex = 0;
+        let correctAnswersCount = 0;
+        let answeredCurrentQuestion = false;
 
         // Berpindah tab navigasi utama
         function switchTab(tabName) {
@@ -569,7 +930,6 @@
 
         // Filter buku berdasarkan kategori
         function filterBooks(categoryKey) {
-            // Update tampilan tombol filter
             document.querySelectorAll('.filter-chip').forEach(chip => {
                 if (chip.dataset.filter === categoryKey) {
                     chip.classList.remove('bg-slate-100', 'text-slate-700');
@@ -611,17 +971,22 @@
                             <p class="text-slate-600 text-sm mt-1">${book.summary}</p>
                         </div>
                     </div>
-                    <button onclick="openReader(${book.id})" class="w-full py-2.5 px-4 rounded-xl bg-brand-accent hover:bg-brand-blue text-white font-bold text-sm transition-colors">
+                    <button onclick="openReader(${book.id})" class="w-full py-2.5 px-4 rounded-xl bg-brand-accent hover:bg-brand-blue text-white font-bold text-sm transition-colors cursor-pointer">
                         Mulai Membaca
                     </button>
                 </div>
             `).join('');
         }
 
-        // Membuka jendela baca cerita & kosakata
+        // Membuka bacaan: jika kategori dongeng, gunakan alur bertahap (Dongeng -> Kosakata Baru -> Latihan Pertanyaan)
         function openReader(bookId) {
             const book = booksData.find(b => b.id === bookId);
             if (!book) return;
+
+            if (book.category === 'dongeng') {
+                openDongengFlow(book);
+                return;
+            }
 
             document.getElementById('reader-badge').textContent = `${book.categoryLabel} • ${book.level}`;
             document.getElementById('reader-title').textContent = book.title;
@@ -635,7 +1000,7 @@
             document.getElementById('reader-vocab').innerHTML = book.vocab
                 .map(v => `
                     <div class="bg-white rounded-xl p-3 border border-amber-200/80">
-                        <span class="block font-extrabold text-brand-blue text-sm">${v.word}</span>
+                        <span class="block font-extrabold text-brand-blue text-sm">${v.icon || '📌'} ${v.word}</span>
                         <span class="block text-slate-600 text-xs mt-0.5 leading-relaxed">${v.meaning}</span>
                     </div>
                 `).join('');
@@ -643,16 +1008,263 @@
             document.getElementById('reader-modal').classList.remove('hidden');
         }
 
+        // Memulai alur belajar dongeng dari Tahap 1
+        function openDongengFlow(book) {
+            currentDongeng = book;
+            currentQuestionIndex = 0;
+            correctAnswersCount = 0;
+            answeredCurrentQuestion = false;
+
+            document.getElementById('df-level').textContent = book.level;
+            document.getElementById('df-title').textContent = book.title;
+            document.getElementById('df-emoji').textContent = book.emoji;
+            document.getElementById('df-caption').textContent = book.caption;
+            document.getElementById('df-story').innerHTML = book.paragraphs
+                .map(p => `<p>${p}</p>`)
+                .join('');
+
+            renderDongengVocabCards(book);
+            goToStoryStep();
+            document.getElementById('dongeng-flow-modal').classList.remove('hidden');
+        }
+
+        // Mengatur indikator langkah aktif (1, 2, atau 3)
+        function updateStepIndicator(activeStep) {
+            [1, 2, 3].forEach(step => {
+                const pill = document.getElementById(`step-pill-${step}`);
+                if (step === activeStep) {
+                    pill.className = 'px-3.5 py-1.5 rounded-full bg-brand-blue text-white flex items-center gap-1.5 shadow-xs';
+                } else if (step < activeStep) {
+                    pill.className = 'px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 flex items-center gap-1.5';
+                } else {
+                    pill.className = 'px-3.5 py-1.5 rounded-full bg-slate-100 text-slate-500 flex items-center gap-1.5';
+                }
+            });
+        }
+
+        // Tahap 1: Menampilkan cerita dongeng
+        function goToStoryStep() {
+            updateStepIndicator(1);
+            document.getElementById('dongeng-step-1').classList.remove('hidden');
+            document.getElementById('dongeng-step-2').classList.add('hidden');
+            document.getElementById('dongeng-step-3').classList.add('hidden');
+        }
+
+        // Tahap 2: Menampilkan kosakata baru setelah klik "Selesai Membaca Dongeng"
+        function goToVocabStep() {
+            updateStepIndicator(2);
+            document.getElementById('dongeng-step-1').classList.add('hidden');
+            document.getElementById('dongeng-step-2').classList.remove('hidden');
+            document.getElementById('dongeng-step-3').classList.add('hidden');
+        }
+
+        // Merender kartu kosakata baru dengan ikon visual, arti kata sederhana, dan contoh kalimat
+        function renderDongengVocabCards(book) {
+            document.getElementById('df-vocab-heading').textContent = `Kosakata Baru dari "${book.title}"`;
+            const container = document.getElementById('df-vocab-cards');
+
+            container.innerHTML = book.vocab.map(item => `
+                <div class="rounded-2xl bg-white border border-amber-200 p-5 shadow-xs flex flex-col justify-between gap-3">
+                    <div>
+                        <div class="flex items-center gap-3 mb-2.5">
+                            <span class="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-100 flex items-center justify-center text-2xl shrink-0">
+                                ${item.icon || '📖'}
+                            </span>
+                            <h4 class="font-display font-extrabold text-lg text-brand-blue">
+                                ${item.word}
+                            </h4>
+                        </div>
+                        <p class="text-slate-700 text-sm sm:text-base font-semibold leading-relaxed">
+                            <span class="text-amber-700 font-bold">Artinya:</span> ${item.meaning}
+                        </p>
+                    </div>
+                    <div class="bg-sky-50/80 border border-sky-100 rounded-xl p-3 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                        <span class="font-bold text-brand-blue block mb-0.5">Contoh kalimat:</span>
+                        "${item.example}"
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Tahap 3: Masuk ke Latihan Menjawab Pertanyaan
+        function goToQuizStep() {
+            updateStepIndicator(3);
+            document.getElementById('dongeng-step-1').classList.add('hidden');
+            document.getElementById('dongeng-step-2').classList.add('hidden');
+            document.getElementById('dongeng-step-3').classList.remove('hidden');
+
+            document.getElementById('quiz-result-box').classList.add('hidden');
+            document.getElementById('quiz-question-box').classList.remove('hidden');
+            document.getElementById('quiz-footer-nav').classList.remove('hidden');
+
+            renderCurrentQuestion();
+        }
+
+        // Merender soal pilihan ganda bergambar/berikon yang sedang aktif
+        function renderCurrentQuestion() {
+            if (!currentDongeng || !currentDongeng.questions || currentDongeng.questions.length === 0) return;
+
+            answeredCurrentQuestion = false;
+            const total = currentDongeng.questions.length;
+            const q = currentDongeng.questions[currentQuestionIndex];
+
+            document.getElementById('quiz-progress-badge').textContent = `Pertanyaan ${currentQuestionIndex + 1} dari ${total}`;
+
+            const box = document.getElementById('quiz-question-box');
+            box.innerHTML = `
+                <p class="font-display font-extrabold text-lg sm:text-xl text-slate-800 leading-snug">
+                    ${currentQuestionIndex + 1}. ${q.question}
+                </p>
+
+                <div class="grid grid-cols-1 gap-3" id="quiz-options-list">
+                    ${q.options.map((opt, idx) => `
+                        <button
+                            id="quiz-opt-${idx}"
+                            onclick="selectQuizOption(${idx})"
+                            class="w-full text-left p-4 rounded-2xl border-2 border-slate-200 hover:border-sky-400 hover:bg-sky-50/60 transition-all flex items-center gap-3.5 cursor-pointer group"
+                        >
+                            <span class="w-11 h-11 rounded-xl bg-slate-100 group-hover:bg-white flex items-center justify-center text-2xl shrink-0">
+                                ${opt.icon || '🔹'}
+                            </span>
+                            <span class="font-bold text-slate-800 text-sm sm:text-base">
+                                ${opt.label}
+                            </span>
+                        </button>
+                    `).join('')}
+                </div>
+
+                <!-- Umpan balik langsung (benar/salah dengan penjelasan singkat) -->
+                <div id="quiz-feedback" class="hidden rounded-2xl p-4 border text-sm sm:text-base leading-relaxed"></div>
+
+                <!-- Tombol Lanjut ke Soal Berikutnya / Lihat Hasil -->
+                <div id="quiz-next-wrap" class="hidden pt-1 flex justify-end">
+                    <button onclick="handleNextQuestion()" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-brand-accent hover:bg-brand-blue text-white font-bold text-sm sm:text-base transition-colors cursor-pointer">
+                        ${currentQuestionIndex + 1 < total ? 'Pertanyaan Berikutnya ➜' : 'Lihat Hasil & Bintang ⭐'}
+                    </button>
+                </div>
+            `;
+        }
+
+        // Memeriksa jawaban pilihan ganda & memberi umpan balik langsung
+        function selectQuizOption(selectedIdx) {
+            if (answeredCurrentQuestion) return;
+            answeredCurrentQuestion = true;
+
+            const q = currentDongeng.questions[currentQuestionIndex];
+            const isCorrect = selectedIdx === q.correctIndex;
+            if (isCorrect) {
+                correctAnswersCount++;
+            }
+
+            // Menonaktifkan tombol pilihan setelah dijawab dan memberi warna visual jelas
+            q.options.forEach((_, idx) => {
+                const btn = document.getElementById(`quiz-opt-${idx}`);
+                btn.disabled = true;
+                btn.classList.remove('hover:border-sky-400', 'hover:bg-sky-50/60', 'cursor-pointer');
+                btn.classList.add('cursor-default');
+
+                if (idx === q.correctIndex) {
+                    btn.classList.remove('border-slate-200');
+                    btn.classList.add('border-emerald-500', 'bg-emerald-50');
+                } else if (idx === selectedIdx && !isCorrect) {
+                    btn.classList.remove('border-slate-200');
+                    btn.classList.add('border-rose-400', 'bg-rose-50');
+                }
+            });
+
+            const feedbackEl = document.getElementById('quiz-feedback');
+            feedbackEl.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedbackEl.className = 'rounded-2xl p-4 border border-emerald-300 bg-emerald-50 text-emerald-900 text-sm sm:text-base leading-relaxed';
+                feedbackEl.innerHTML = `
+                    <div class="font-display font-extrabold flex items-center gap-2 mb-1">
+                        <span>🌟</span>
+                        <span>Jawaban Benar!</span>
+                    </div>
+                    <p class="font-medium">${q.explanation}</p>
+                `;
+            } else {
+                feedbackEl.className = 'rounded-2xl p-4 border border-amber-300 bg-amber-50 text-amber-950 text-sm sm:text-base leading-relaxed';
+                feedbackEl.innerHTML = `
+                    <div class="font-display font-extrabold flex items-center gap-2 mb-1">
+                        <span>💛</span>
+                        <span>Belum tepat, ayo kita pahami bersama!</span>
+                    </div>
+                    <p class="font-medium">${q.explanation}</p>
+                `;
+            }
+
+            document.getElementById('quiz-next-wrap').classList.remove('hidden');
+        }
+
+        // Lanjut ke soal berikutnya atau tampilkan layar bintang penghargaan
+        function handleNextQuestion() {
+            const total = currentDongeng.questions.length;
+            if (currentQuestionIndex + 1 < total) {
+                currentQuestionIndex++;
+                renderCurrentQuestion();
+            } else {
+                showQuizResult();
+            }
+        }
+
+        // Menampilkan skor & bintang penghargaan di akhir sesi latihan
+        function showQuizResult() {
+            document.getElementById('quiz-question-box').classList.add('hidden');
+            document.getElementById('quiz-footer-nav').classList.add('hidden');
+
+            const total = currentDongeng.questions.length;
+            const ratio = correctAnswersCount / total;
+
+            let stars = '⭐';
+            let title = 'Usaha Yang Bagus!';
+            let message = 'Kamu sudah mencoba menjawab semua pertanyaan. Ayo coba lagi untuk mengumpulkan lebih banyak bintang!';
+
+            if (ratio === 1) {
+                stars = '⭐⭐⭐';
+                title = 'Luar Biasa! Semua Jawaban Benar!';
+                message = 'Kamu hebat sekali! Kamu membaca cerita dengan teliti dan memahami kosakata baru dengan baik.';
+            } else if (ratio >= 0.5) {
+                stars = '⭐⭐';
+                title = 'Hebat! Kamu Sudah Paham Ceritanya!';
+                message = 'Kerja bagus! Kamu berhasil menjawab sebagian besar pertanyaan dengan tepat.';
+            }
+
+            document.getElementById('result-stars').textContent = stars;
+            document.getElementById('result-title').textContent = title;
+            document.getElementById('result-score-text').textContent = `Skor kamu: ${correctAnswersCount} dari ${total} jawaban benar`;
+            document.getElementById('result-encouragement').textContent = message;
+
+            document.getElementById('quiz-result-box').classList.remove('hidden');
+        }
+
+        // Mengulangi latihan pertanyaan dari awal
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            correctAnswersCount = 0;
+            answeredCurrentQuestion = false;
+            goToQuizStep();
+        }
+
+        // Menutup modal dan mengarahkan ke daftar Dongeng Nusantara lain
+        function chooseAnotherDongeng() {
+            closeModal('dongeng-flow-modal');
+            switchTab('koleksi');
+            filterBooks('dongeng');
+        }
+
         // Membuka modal kamus kosakata gabungan
         function openVocabModal() {
             const allVocab = booksData.flatMap(b => b.vocab.map(v => ({ ...v, source: b.title })));
             document.getElementById('all-vocab-list').innerHTML = allVocab.map(item => `
                 <div class="p-4 rounded-2xl bg-sky-50/70 border border-sky-100">
-                    <div class="flex items-center justify-between">
-                        <span class="font-display font-extrabold text-brand-blue text-base">${item.word}</span>
+                    <div class="flex items-center justify-between gap-2">
+                        <span class="font-display font-extrabold text-brand-blue text-base">${item.icon || '💡'} ${item.word}</span>
                         <span class="text-[11px] font-semibold text-slate-400">Dari: ${item.source}</span>
                     </div>
                     <p class="text-slate-700 text-sm mt-1">${item.meaning}</p>
+                    ${item.example ? `<p class="text-slate-500 text-xs mt-1 italic">"${item.example}"</p>` : ''}
                 </div>
             `).join('');
             document.getElementById('vocab-modal').classList.remove('hidden');
